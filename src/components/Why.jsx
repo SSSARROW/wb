@@ -48,6 +48,7 @@ const FeatureCard = ({ icon, title, description, delay }) => {
 }
 
 export default function WhyUsSection() {
+  // function body starts here
   const titleRef = useRef(null)
   const isTitleInView = useInView(titleRef, { once: true, amount: 0.5 })
   const titleControls = useAnimation()
@@ -99,7 +100,7 @@ export default function WhyUsSection() {
   ]
 
   return (
-    <section className="py-20 bg-black">
+  <section className="pt-32 pb-20">
       <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-24">
         <div className="text-center mb-16">
           <motion.div
@@ -118,7 +119,7 @@ export default function WhyUsSection() {
               },
             }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-600 text-transparent bg-clip-text">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 pb-8 bg-gradient-to-r from-green-400 to-blue-600 text-transparent bg-clip-text">
               Why Choose Us?
             </h2>
           </motion.div>
@@ -169,9 +170,12 @@ export default function WhyUsSection() {
             },
           }}
         >
-          <button className="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-700 hover:to-greem-700 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-purple-500/20 transition-all duration-300 font-medium">
+          <a
+            href="#contact"
+            className="bg-gradient-to-r from-green-400 to-green-600 hover:from-green-700 hover:to-greem-700 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-purple-500/20 transition-all duration-300 font-medium cursor-pointer inline-block"
+          >
             Start Your Project
-          </button>
+          </a>
         </motion.div>
 
         <div className="mt-20 relative">
@@ -188,43 +192,18 @@ export default function WhyUsSection() {
               },
             }}
           >
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-white">Ready to transform your ideas into reality?</h3>
-                <p className="text-zinc-400 mb-6">
-                  Our team of experts is ready to help you build the software solution your business needs. Let's create
-                  something amazing together.
-                </p>
-                <button className="border border-green-500 text-white hover:bg-purple-500/10 px-6 py-2 rounded-md transition-colors duration-300">
-                  Contact Us Today
-                </button>
-              </div>
-              <div className="bg-zinc-800 p-6 rounded-lg">
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
-                      <span className="text-green-500 font-bold">1</span>
-                    </div>
-                    <p className="text-zinc-300">Schedule a free consultation</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
-                      <span className="text-green-500 font-bold">2</span>
-                    </div>
-                    <p className="text-zinc-300">Get a detailed project proposal</p>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-4">
-                      <span className="text-green-500 font-bold">3</span>
-                    </div>
-                    <p className="text-zinc-300">Watch your vision come to life</p>
-                  </div>
-                </div>
-              </div>
+            <div className="relative flex flex-col items-center justify-center text-center w-full">
+              <h3 className="text-2xl font-bold mb-4 text-white">Ready to transform your ideas into reality?</h3>
+              <p className="text-zinc-400 mb-6">
+                Our team of experts is ready to help you build the software solution your business needs. Let's create something amazing together.
+              </p>
+              <button className="border border-green-500 text-white hover:bg-purple-500/10 px-6 py-2 rounded-md transition-colors duration-300">
+                Contact Us Today
+              </button>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -8,13 +8,11 @@ import Footer from './components/Footer'
 import Process from './components/Process'
 const App = () => {
   return (
-    <div className='overflow-x-hidden scrollbar-hide' >
+    <div className='overflow-x-hidden scrollbar-hide min-h-screen w-full bg-gradient-to-br from-black via-gray-900 to-emerald-950'>
       <Hero />
       <Services />
       <Why />
       <Process />
-      
-      
       <Contact />
       <Footer />
     </div>

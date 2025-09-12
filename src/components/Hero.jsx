@@ -9,17 +9,12 @@ const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const sectionRef = useRef(null)
 
-  // Handle scroll effect for navbar
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-
+    const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Handle mouse movement for interactive background
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (sectionRef.current) {
@@ -30,7 +25,6 @@ const Hero = () => {
         })
       }
     }
-
     const section = sectionRef.current
     if (section) {
       section.addEventListener("mousemove", handleMouseMove)
@@ -38,14 +32,13 @@ const Hero = () => {
     }
   }, [sectionRef])
 
-  // Animation variants
   const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: (i = 0) => ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: i * 0.1,
+        delay: i * 0.15,
         duration: 0.7,
         ease: "easeOut",
       },
@@ -54,34 +47,37 @@ const Hero = () => {
 
   return (
     <>
-      {/* Nav Bar */}
+      {/* Navbar */}
       <header
         className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled ? "py-2 bg-white/95 backdrop-blur-sm shadow-md" : "py-4 bg-white"
+          scrolled
+            ? "py-4 bg-emerald-950/80 backdrop-blur-lg shadow-lg"
+            : "py-6 bg-emerald-950/40 backdrop-blur-sm"
         }`}
       >
-        <div className="container mx-auto flex justify-between items-center px-4 md:px-8 lg:px-16 xl:px-24">
+        <div className="container mx-auto flex justify-between items-center px-6 lg:px-16">
           <motion.a
             href="#"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
             className="relative z-10"
           >
             <img
               src="/src/assets/White.png"
-              alt="SRSM3dia Logo"
-              className="w-40 md:w-52 hover:scale-105 transition-all duration-300"
+              alt="Logo"
+              className="w-36 md:w-48 hover:scale-110 transition-transform duration-300"
             />
           </motion.a>
 
+          {/* Desktop Menu */}
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="hidden xl:flex justify-end gap-8 font-medium text-base ml-auto"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="hidden xl:flex justify-end gap-10 font-medium text-base ml-auto"
           >
-            {["About", "Why Us?", "Services", "Our Process"].map((item, index) => (
+            {["About", "Why Us?", "Services"].map((item, index) => (
               <motion.li
                 key={item}
                 custom={index}
@@ -90,23 +86,34 @@ const Hero = () => {
                 variants={fadeIn}
                 className="relative group"
               >
-                <a href="#" className="p-3 inline-block hover:text-sky-400 transition-colors duration-300">
+                <a
+                  href="#"
+                  className="p-2 text-white hover:text-emerald-400 transition-colors duration-300"
+                >
                   {item}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sky-400 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               </motion.li>
             ))}
+            <motion.li custom={100} initial="hidden" animate="visible" variants={fadeIn}>
+              <a
+                href="#contact"
+                className="px-5 py-2 bg-emerald-500 text-white rounded-lg font-semibold shadow-md hover:shadow-emerald-500/40 transition-all duration-300"
+              >
+                Contact Us
+              </a>
+            </motion.li>
           </motion.ul>
 
+          {/* Mobile Menu Toggle */}
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="xl:hidden relative z-10 p-2 rounded-md hover:bg-gray-100 transition-colors"
-            aria-label="Toggle menu"
+            className="xl:hidden relative z-10 p-2 rounded-md hover:bg-emerald-800 transition-colors"
           >
-            <i className={`bx ${isMenuOpen ? "bx-x" : "bx-menu"} text-3xl`}></i>
+            <i className={`bx ${isMenuOpen ? "bx-x" : "bx-menu"} text-3xl text-white`}></i>
           </motion.button>
         </div>
 
@@ -118,169 +125,127 @@ const Hero = () => {
             height: isMenuOpen ? "auto" : 0,
           }}
           transition={{ duration: 0.3 }}
-          className={`xl:hidden overflow-hidden bg-white w-full shadow-lg`}
+          className="xl:hidden overflow-hidden bg-emerald-950 text-white w-full shadow-lg"
         >
-          <div className="container mx-auto px-4 py-4">
-            <ul className="flex flex-col space-y-2">
-              {["About", "Why Us?", "Services", "Our Process"].map((item, index) => (
+          <div className="container mx-auto px-6 py-4">
+            <ul className="flex flex-col space-y-3">
+              {["About", "Why Us?", "Services"].map((item, index) => (
                 <motion.li
                   key={item}
-                  initial={{ opacity: 0, x: -10 }}
+                  initial={{ opacity: 0, x: -20 }}
                   animate={{
                     opacity: isMenuOpen ? 1 : 0,
-                    x: isMenuOpen ? 0 : -10,
+                    x: isMenuOpen ? 0 : -20,
                   }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="w-full"
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
                 >
                   <a
                     href="#"
-                    className="block w-full p-3 hover:bg-sky-400 hover:text-white rounded-md transition-all duration-200"
+                    className="block p-3 rounded-md hover:bg-emerald-500/20 transition-colors"
                   >
                     {item}
                   </a>
                 </motion.li>
               ))}
+              <motion.li
+                initial={{ opacity: 0, x: -20 }}
+                animate={{
+                  opacity: isMenuOpen ? 1 : 0,
+                  x: isMenuOpen ? 0 : -20,
+                }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+              >
+                <a
+                  href="#contact"
+                  className="block p-3 bg-emerald-500 rounded-md text-center font-semibold"
+                >
+                  Contact Us
+                </a>
+              </motion.li>
             </ul>
           </div>
         </motion.div>
       </header>
 
       {/* Hero Section */}
-      <section ref={sectionRef} className="relative overflow-hidden bg-black min-h-screen flex items-center pt-24">
-        {/* Interactive Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="grid grid-cols-12 h-full">
-              {Array.from({ length: 12 }).map((_, i) => (
-                <div key={i} className="border-r border-white/5 h-full"></div>
-              ))}
-            </div>
-            <div className="grid grid-rows-12 w-full absolute top-0 left-0 h-full">
-              {Array.from({ length: 12 }).map((_, i) => (
-                <div key={i} className="border-b border-white/5 w-full"></div>
-              ))}
-            </div>
-          </div>
+      <section
+        ref={sectionRef}
+        className="relative overflow-hidden bg-gray-950 min-h-screen flex items-center justify-center"
+      >
+        {/* Interactive Mouse Glow */}
+        <motion.div
+          className="absolute w-[500px] h-[500px] rounded-full bg-emerald-500/30 blur-[120px] opacity-50"
+          animate={{ x: mousePosition.x - 250, y: mousePosition.y - 250 }}
+          transition={{ type: "spring", damping: 60, stiffness: 40 }}
+        />
 
-          {/* Interactive Glow - Only outside the text area */}
+        {/* Floating Particles */}
+        {Array.from({ length: 20 }).map((_, i) => (
           <motion.div
-            className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-r from-sky-600/20 to-fuchsia-600/20 blur-[100px] opacity-50"
+            key={i}
+            className="absolute w-2 h-2 bg-emerald-400 rounded-full"
+            initial={{
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+              opacity: 0,
+            }}
             animate={{
-              x: mousePosition.x - 250,
-              y: mousePosition.y - 250,
+              y: [null, Math.random() * window.innerHeight],
+              opacity: [0.2, 0.8, 0.2],
             }}
             transition={{
-              type: "spring",
-              damping: 50, // Increased damping for slower movement
-              stiffness: 30, // Reduced stiffness for slower movement
-              mass: 1,
+              duration: Math.random() * 10 + 5,
+              repeat: Infinity,
+              ease: "easeInOut",
             }}
           />
+        ))}
 
-          {/* Fixed Glows */}
-          <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-sky-600/10 blur-[80px]"></div>
-          <div className="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full bg-fuchsia-600/10 blur-[80px]"></div>
+        {/* Content */}
+        <div className="relative z-10 text-center px-6">
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-4xl md:text-6xl font-extrabold leading-tight text-white"
+          >
+            Innovative <span className="text-emerald-400">Software</span> <br />
+            Tailored for Your Business
+          </motion.h1>
 
-          {/* Fixed glow behind the "Solutions" text */}
-          <div className="absolute top-1/2 left-1/4 transform -translate-y-1/2 -translate-x-1/4 w-96 h-96 rounded-full bg-sky-600/15 blur-[80px]"></div>
-        </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="mt-6 text-gray-300 text-lg md:text-xl max-w-2xl mx-auto"
+          >
+            We design powerful websites, apps, and AI-driven solutions that
+            bring ideas to life and help businesses grow.
+          </motion.p>
 
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-8 lg:px-16 xl:px-24 relative z-10">
-          {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex flex-col justify-center py-14 md:py-0"
+            transition={{ duration: 0.7, delay: 1 }}
+            className="mt-10 flex justify-center gap-4"
           >
-            <div className="text-center md:text-left space-y-6 relative">
-              {/* Fixed glow specifically for the text area */}
-              <div className="absolute -left-10 top-1/2 transform -translate-y-1/2 w-full h-full rounded-full bg-sky-600/10 blur-[80px] pointer-events-none"></div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white relative z-10"
-              >
-                We Provide Software <br />
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 }}
-                  className="text-sky-400"
-                >
-                  Solutions
-                </motion.span>
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
-                className="text-gray-400 text-lg max-w-[500px] mx-auto md:mx-0 relative z-10"
-              >
-                We are a team of talented developers making websites and apps
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="flex justify-center md:justify-start mt-8 relative z-10"
-              >
-                <motion.a
-                  href="#"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-6 py-3 bg-emerald-400 text-black font-semibold rounded-md hover:shadow-lg hover:shadow-emerald-400/20 transition-all duration-300"
-                >
-                  Let&apos;s Talk
-                </motion.a>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Hero Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex justify-center md:justify-end items-center relative"
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
-              className="relative z-10"
+            <motion.a
+              href="#"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-7 py-3 bg-emerald-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-emerald-500/40 transition-all"
             >
-              <img
-                src="/src/assets/girl.png"
-                alt="Developer"
-                className="w-[300px] md:w-[400px] lg:w-[500px] max-w-full drop-shadow-2xl hover:scale-[1.02] transition-all duration-500"
-              />
-            </motion.div>
+              Let&apos;s Talk
+            </motion.a>
+            <motion.a
+              href="#services"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-7 py-3 border border-emerald-400 text-white rounded-lg hover:bg-emerald-400/10 transition-all"
+            >
+              Our Services
+            </motion.a>
           </motion.div>
-        </div>
-
-        
-
-        {/* Code Lines */}
-        <div className="absolute right-0 top-1/4 w-1/3 h-1/2 pointer-events-none opacity-10">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-px bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent"
-              style={{
-                width: `${Math.random() * 30 + 20}%`,
-                top: `${i * 12}%`,
-                left: `${Math.random() * 40}%`,
-                opacity: Math.random() * 0.5 + 0.5,
-              }}
-            />
-          ))}
         </div>
       </section>
     </>
@@ -288,4 +253,3 @@ const Hero = () => {
 }
 
 export default Hero
-

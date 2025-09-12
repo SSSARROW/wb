@@ -42,7 +42,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-black border-t border-green-500/10 pt-16 pb-8">
+  <footer className="border-t border-green-500/10 pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
@@ -116,24 +116,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter (Optional) */}
-        <div className="mt-12 pt-8 border-t border-zinc-800">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-white font-semibold text-lg mb-2">Subscribe to our newsletter</h3>
-              <p className="text-gray-400">Stay updated with our latest news and offers</p>
-            </div>
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-grow px-4 py-3 bg-zinc-800 border border-zinc-700 rounded-l-md focus:outline-none focus:ring-1 focus:ring-green-500 text-white"
-              />
-              <button className="px-5 py-3 bg-gradient-to-r from-green-400 to-green-600 text-black font-medium rounded-r-md hover:from-green-500 hover:to-green-700 transition-colors duration-300">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </footer>
   )
