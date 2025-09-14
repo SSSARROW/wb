@@ -1,0 +1,16 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Careers from './components/Careers'
+import JobDetail from './pages/careers/[job]'
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/:job" element={<JobDetail />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App

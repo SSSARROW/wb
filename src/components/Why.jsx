@@ -100,7 +100,7 @@ export default function WhyUsSection() {
   ]
 
   return (
-  <section className="pt-32 pb-20">
+  <section id="why" className="pt-32 pb-20">
       <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-24">
         <div className="text-center mb-16">
           <motion.div
@@ -197,9 +197,12 @@ export default function WhyUsSection() {
               <p className="text-zinc-400 mb-6">
                 Our team of experts is ready to help you build the software solution your business needs. Let's create something amazing together.
               </p>
-              <button className="border border-green-500 text-white hover:bg-purple-500/10 px-6 py-2 rounded-md transition-colors duration-300">
+              <a
+                href="#contact"
+                className="border border-green-500 text-white hover:bg-purple-500/10 px-6 py-2 rounded-md transition-colors duration-300 cursor-pointer inline-block"
+              >
                 Contact Us Today
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>

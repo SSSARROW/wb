@@ -1,63 +1,65 @@
-"use client"
-
 import { useEffect, useRef, useState } from "react"
 import { FaLaptopCode, FaMobileAlt } from "react-icons/fa";
 import { MdDesignServices } from "react-icons/md";
 import { BiWorld } from "react-icons/bi";
 import { SiOpenai } from "react-icons/si";
+import { CiGlobe } from "react-icons/ci";
+import { CiMobile2 } from "react-icons/ci";
 import { RiCodeSSlashFill } from "react-icons/ri";
 import { FiSettings } from "react-icons/fi";
-
+import { TbWorldWww } from "react-icons/tb";
+import { LuBrainCircuit } from "react-icons/lu";
+import { HiOutlineDeviceMobile } from "react-icons/hi";
+import { IoGlobeOutline } from "react-icons/io5";
 const Services = () => {
   const cardsRef = useRef([])
   const [activeIndex, setActiveIndex] = useState(null)
 
   // Enhanced card data with more details and links
   const cardData = [
-    {
-      title: "Web Development",
-      description: "Building responsive and interactive web applications using modern frameworks and libraries.",
-      icon: <FaLaptopCode className="text-white"/>,
-      link: "/services/web-development",
-      color: "from-purple-500/20 to-blue-500/20",
-    },
-    {
-      title: "UI/UX Design",
-      description: "Creating intuitive and beautiful user interfaces with attention to detail and user research.",
-      icon: <MdDesignServices className="text-white"/>,
-      link: "/services/design",
-      color: "from-pink-500/20 to-purple-500/20",
-    },
-    {
-      title: "Mobile Apps",
-      description: "Developing cross-platform mobile applications for iOS and Android with native performance.",
-      icon: <FaMobileAlt className="text-white"/>,
-      link: "/services/mobile-apps",
-      color: "from-blue-500/20 to-cyan-500/20",
-    },
-    {
-      title: "Web Apps",
-      description: "Developing cross-platform mobile applications for iOS and Android with native performance.",
-      icon: <BiWorld className="text-white"/>,
-      link: "/services/mobile-apps",
-      color: "from-blue-500/20 to-cyan-500/20",
-    },
-    {
-      title: "AI Solutions",
-      description: "Developing cross-platform mobile applications for iOS and Android with native performance.",
-      icon: <SiOpenai className="text-white"/>,
-      link: "/services/mobile-apps",
-      color: "from-blue-500/20 to-cyan-500/20",
-    },
-    {
-      title: "Software Development",
-      description: "Developing cross-platform mobile applications for iOS and Android with native performance.",
-      icon: <RiCodeSSlashFill className="text-white"/>,
-      link: "/services/mobile-apps",
-      color: "from-blue-500/20 to-cyan-500/20",
-    },
-    
-  ]
+  {
+    title: "AI Solutions",
+    description: "Building intelligent systems and applications leveraging the power of artificial intelligence.",
+    icon: <LuBrainCircuit className="text-white"/>,
+    link: "/services/ai-solutions",
+    color: "from-blue-500/20 to-cyan-500/20",
+  },
+  {
+    title: "Web Apps",
+    description: "Creating powerful and scalable web applications that are both user-friendly and highly functional.",
+    icon: <IoGlobeOutline className="text-white"/>,
+    link: "/services/web-apps",
+    color: "from-blue-500/20 to-cyan-500/20",
+  },
+  {
+    title: "Mobile Apps",
+    description: "Developing fast, responsive cross-platform mobile applications for iOS and Android.",
+    icon: <HiOutlineDeviceMobile className="text-white"/>,
+    link: "/services/mobile-apps",
+    color: "from-blue-500/20 to-cyan-500/20",
+  },
+  {
+    title: "Web Development",
+    description: "Building mobile-first, responsive, and interactive websites using modern technologies.",
+    icon: <TbWorldWww className="text-white"/>,
+    link: "/services/web-development",
+    color: "from-purple-500/20 to-blue-500/20",
+  },
+  {
+    title: "UI/UX Design",
+    description: "Creating intuitive and visually appealing user interfaces with a focus on user experience ",
+    icon: <MdDesignServices className="text-white"/>,
+    link: "/services/design",
+    color: "from-pink-500/20 to-purple-500/20",
+  },
+  {
+    title: "Software Development",
+    description: "Delivering custom software solutions tailored to meet specific business needs and challenges.",
+    icon: <RiCodeSSlashFill className="text-white"/>,
+    link: "/services/software-development",
+    color: "from-blue-500/20 to-cyan-500/20",
+  },
+];
 
   useEffect(() => {
     // More efficient event handling with refs
@@ -96,7 +98,7 @@ const Services = () => {
   }
 
   return (
-  <div className="relative min-h-screen w-full overflow-hidden">
+  <div id="services" className="relative min-h-screen w-full overflow-hidden">
       {/* Glassmorphism & colorful blurred gradients */}
       <div className="absolute inset-0 z-[-2]">
         {/* Grid Pattern */}
@@ -200,7 +202,7 @@ const Services = () => {
       </div>
 
       {/* CSS for animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes twinkle {
           0%, 100% { opacity: 0.2; }
           50% { opacity: 0.7; }

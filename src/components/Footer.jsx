@@ -35,10 +35,8 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { icon: <Github size={18} />, href: "https://github.com" },
-    { icon: <Linkedin size={18} />, href: "https://linkedin.com" },
-    { icon: <Twitter size={18} />, href: "https://twitter.com" },
-    { icon: <Instagram size={18} />, href: "https://instagram.com" },
+    { icon: <Linkedin size={18} />, href: "https://linkedin.com/company/senxdev" },
+    { icon: <Instagram size={18} />, href: "https://instagram.com/senxdev/" },
   ]
 
   return (
@@ -97,22 +95,19 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center text-gray-400">
               <Mail size={18} className="mr-3 text-green-400" />
-              <span>info@yourcompany.com</span>
+              <span>suport@senxdev.com</span>
             </div>
             <div className="flex items-center text-gray-400">
               <Phone size={18} className="mr-3 text-green-400" />
-              <span>+94 76 6232337</span>
+              <span>+94 76 358 1264</span>
             </div>
-            <div className="flex items-center text-gray-400">
-              <MapPin size={18} className="mr-3 text-green-400" />
-              <span>123 Tech Street, Digital City</span>
-            </div>
+            
           </div>
         </div>
 
         {/* Copyright */}
         <div className="mt-12 text-center text-gray-500 text-sm">
-          <p>© {currentYear} SRSM3dia. All rights reserved.</p>
+          <p>© {currentYear} SenXDev. All rights reserved.</p>
         </div>
 
         {/* Newsletter (Optional) */}
