@@ -46,7 +46,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div className="text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-500 text-transparent bg-clip-text">
-              SRSM3dia
+              SenXDev
             </div>
             <p className="text-gray-400 max-w-xs">
               We create innovative software solutions that drive business growth and transform ideas into reality.
