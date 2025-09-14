@@ -275,7 +275,7 @@ export default function Contact() {
           >
             <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-8">
               <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-              <ContactInfo icon={<Mail size={20} />} title="Email Us" content="suport@senxdev.com" delay={0} />
+              <ContactInfo icon={<Mail size={20} />} title="Email Us" content="support@senxdev.com" delay={0} />
               <ContactInfo icon={<Phone size={20} />} title="Call Us" content="+94 76 358 1264" delay={1} />
 
               <div className="mt-12">

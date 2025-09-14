@@ -95,7 +95,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center text-gray-400">
               <Mail size={18} className="mr-3 text-green-400" />
-              <span>suport@senxdev.com</span>
+              <span>support@senxdev.com</span>
             </div>
             <div className="flex items-center text-gray-400">
               <Phone size={18} className="mr-3 text-green-400" />
