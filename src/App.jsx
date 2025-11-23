@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Navbar from "./components/Navbar"  // Add this import
+import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import About from "./components/About"
 import Services from "./components/Services"
@@ -11,6 +11,7 @@ import Process from "./components/Process"
 import Careers from "./components/Careers"
 import JobDetail from "./pages/careers/[job]"
 import ApplyForm from "./pages/careers/ApplyForm"
+import FloatingWhatsApp from "./components/FloatingWhatsApp"
 
 const App = () => {
   const [showCareers, setShowCareers] = useState(false)
@@ -80,6 +81,8 @@ const App = () => {
           </>
         } />
       </Routes>
+      {/* Add the floating WhatsApp button */}
+      <FloatingWhatsApp />
     </BrowserRouter>
   )
 }

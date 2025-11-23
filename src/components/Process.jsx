@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Lightbulb, Code, Rocket, MessageSquare } from "lucide-react";
+import { Lightbulb, Code, Rocket, MessageSquare, ChevronLeft, ChevronRight } from "lucide-react";
 
 const processSteps = [
 	{
@@ -67,7 +67,7 @@ const OurProcess = () => {
 		};
 	}, []);
 
-	// Handle touch events for swipe support
+	// Improved touch events for better mobile sensitivity
 	useEffect(() => {
 		const container = scrollContainerRef.current;
 		if (!container) return;
@@ -82,11 +82,11 @@ const OurProcess = () => {
 			const touchEndX = e.touches[0].clientX;
 			const deltaX = touchStartX.current - touchEndX;
 
-			if (Math.abs(deltaX) > 50) {
+			if (Math.abs(deltaX) > 30) {
 				isScrolling.current = true;
 				setTimeout(() => {
 					isScrolling.current = false;
-				}, 1200);
+				}, 800);
 
 				if (deltaX > 0) {
 					setCurrentStep((prev) => Math.min(prev + 1, processSteps.length - 1));
@@ -97,14 +97,18 @@ const OurProcess = () => {
 			}
 		};
 
-		container.addEventListener("touchstart", handleTouchStart);
-		container.addEventListener("touchmove", handleTouchMove);
+		container.addEventListener("touchstart", handleTouchStart, { passive: true });
+		container.addEventListener("touchmove", handleTouchMove, { passive: true });
 
 		return () => {
 			container.removeEventListener("touchstart", handleTouchStart);
 			container.removeEventListener("touchmove", handleTouchMove);
 		};
 	}, []);
+
+	// Navigation helpers for mobile buttons
+	const goToPrevious = () => setCurrentStep((prev) => Math.max(prev - 1, 0));
+	const goToNext = () => setCurrentStep((prev) => Math.min(prev + 1, processSteps.length - 1));
 
 	return (
 		<section className="text-white relative py-20" id="process">
@@ -171,11 +175,11 @@ const OurProcess = () => {
 					</div>
 				</div>
 
-				{/* Cards container - all cards with fixed positions */}
+				{/* Cards container - switched to CSS Grid for better mobile flow */}
 				<div
 					ref={scrollContainerRef}
-					className="relative w-full overflow-hidden py-8"
-					style={{ height: "400px" }}
+					className="relative w-full overflow-hidden py-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8"
+					style={{ minHeight: "300px" }}
 				>
 					{processSteps.map((step, idx) => {
 						const isActive = idx === currentStep;
@@ -183,39 +187,18 @@ const OurProcess = () => {
 						const isNext = idx === currentStep + 1;
 						const isVisible = isActive || isPrevious || isNext;
 
-						// Calculate position - active card is always centered
-						let leftPosition = "50%";
-						let transform = "translateX(-50%)";
-
-						if (isActive) {
-							// Active card: center of screen
-							leftPosition = "50%";
-							transform = "translateX(-50%)";
-						} else if (isPrevious) {
-							// Previous card: left of center
-							leftPosition = "50%";
-							transform = "translateX(calc(-100% - 440px))"; // 300px (half active) + 100px (half inactive) + 40px spacing
-						} else if (isNext) {
-							// Next card: right of center
-							leftPosition = "50%";
-							transform = "translateX(400px)";
-						}
-
 						return (
 							<motion.div
 								key={idx}
-								className={`absolute top-1/2 flex flex-col items-center justify-center text-center border-2 transition-all duration-1000 ease-in-out ${
+								className={`flex flex-col items-center justify-center text-center border-2 transition-all duration-1000 ease-in-out ${
 									isActive
-										? "w-[600px] h-[320px] scale-105 opacity-100 bg-gradient-to-br from-zinc-800 to-zinc-900 border-green-500 shadow-[0_12px_48px_rgba(0,255,128,0.3)]"
+										? "w-full md:w-[600px] h-auto md:h-[320px] scale-100 opacity-100 bg-gradient-to-br from-zinc-800 to-zinc-900 border-green-500 shadow-[0_12px_48px_rgba(0,255,128,0.3)]"
 										: isVisible
-										? "w-[200px] h-[120px] scale-95 opacity-70 bg-zinc-800 border-transparent shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
-										: "w-[200px] h-[120px] scale-90 opacity-0 bg-zinc-800 border-transparent"
-								}`}
+										? "w-full md:w-[200px] h-auto md:h-[120px] scale-95 opacity-70 bg-zinc-800 border-transparent shadow-[0_6px_20px_rgba(0,0,0,0.2)]"
+										: "w-full md:w-[200px] h-auto md:h-[120px] scale-90 opacity-0 bg-zinc-800 border-transparent"
+								} ${!isVisible ? "hidden md:block" : ""}`}
 								style={{
-									left: leftPosition,
-									transform: `${transform} translateY(-50%)`,
 									borderRadius: "16px",
-									visibility: isVisible ? "visible" : "hidden",
 									zIndex: isActive ? 10 : 1,
 								}}
 								aria-live={isActive ? "polite" : "off"}
@@ -251,6 +234,26 @@ const OurProcess = () => {
 							</motion.div>
 						);
 					})}
+				</div>
+
+				{/* Mobile navigation buttons */}
+				<div className="flex justify-center gap-4 mt-8 md:hidden">
+					<button
+						onClick={goToPrevious}
+						disabled={currentStep === 0}
+						className="p-2 bg-zinc-800 rounded-full text-zinc-400 hover:text-white disabled:opacity-50"
+						aria-label="Previous step"
+					>
+						<ChevronLeft size={24} />
+					</button>
+					<button
+						onClick={goToNext}
+						disabled={currentStep === processSteps.length - 1}
+						className="p-2 bg-zinc-800 rounded-full text-zinc-400 hover:text-white disabled:opacity-50"
+						aria-label="Next step"
+					>
+						<ChevronRight size={24} />
+					</button>
 				</div>
 			</div>
 

@@ -1,9 +1,10 @@
 "use client"
 
-import React from "react"  // Added this import as per the provided snippet
+import React from "react"
 import { useEffect, useRef, useState } from "react"
 import { motion, useInView, useAnimation } from "framer-motion"
 import { Mail, Phone, Send, Github, Linkedin, Twitter, Instagram } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa"
 
 const ContactInfo = ({ icon, title, content, delay }) => {
   return (
@@ -282,7 +283,8 @@ export default function Contact() {
                 <h3 className="text-xl font-bold text-white mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
                   <SocialLink icon={<Linkedin size={20} />} href="https://linkedin.com/company/senxdev" delay={1} />
-                  <SocialLink icon={<Instagram size={20} />} href="https://instagram.com/senxdev                                " delay={3} />
+                  <SocialLink icon={<Instagram size={20} />} href="https://instagram.com/senxdev" delay={3} />
+                  <SocialLink icon={<FaWhatsapp size={20} />} href="https://wa.me/94763581264" delay={4} />
                 </div>
               </div>
             </div>
