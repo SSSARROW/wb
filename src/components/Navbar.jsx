@@ -81,7 +81,7 @@ const Navbar = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="hidden xl:flex justify-end gap-10 font-medium text-base ml-auto"
         >
-          {["Why Us?", "Services", "Process", "Careers"].map((item, index) => {
+          {["Why Us?", "Services",  "Careers"].map((item, index) => {
             const sectionId = item === "Why Us?" ? "why" : item.toLowerCase();
             return (
               <motion.li
@@ -143,7 +143,7 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-6 py-4">
           <ul className="flex flex-col space-y-3">
-            {["Why Us?", "Services", "Process", "Careers"].map((item, index) => {
+            {["Why Us?", "Services",  "Careers"].map((item, index) => {
               const sectionId = item === "Why Us?" ? "why" : item.toLowerCase();
               return (
                 <motion.li
