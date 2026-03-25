@@ -43,7 +43,6 @@ const App = () => {
                  <>
                    <Services />
                    <Why />
-                   <Process />
                    <Contact />
                    <Footer />
                  </>
