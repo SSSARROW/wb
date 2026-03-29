@@ -58,7 +58,7 @@ const projects = [
     id: 7,
     title: "Luminous Atelier",
     category: "Wellness & Skincare",
-    description: "Radiance reimagined. A bespoke skincare and wellness platform focusing on pure, uncompromising luxury and scientific skin health for the modern soul.",
+    description: "Radiance reimagined. a bespoke skincare and wellness platform focusing on pure, uncompromising luxury and scientific skin health for the modern soul.",
     image: img7,
     color: "#ec4899",
     url: "/projects/luminous/index.html"
