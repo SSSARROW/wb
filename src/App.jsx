@@ -11,6 +11,7 @@ import Process from "./components/Process"
 import Careers from "./components/Careers"
 import JobDetail from "./pages/careers/[job]"
 import ApplyForm from "./pages/careers/ApplyForm"
+import Portfolio from "./pages/Portfolio"
 import FloatingWhatsApp from "./components/FloatingWhatsApp"
 
 const App = () => {
@@ -56,6 +57,16 @@ const App = () => {
             <Navbar />
             <div className="overflow-x-hidden scrollbar-hide min-h-screen w-full bg-gradient-to-br from-black via-gray-900 to-emerald-950 pt-20 md:pt-24">
                <Careers />
+            </div>
+          </>
+        } />
+
+        <Route path="/portfolio" element={
+          <>
+            <Navbar />
+            <div className="overflow-x-hidden scrollbar-hide min-h-screen w-full bg-gradient-to-br from-black via-gray-900 to-emerald-950 pt-20 md:pt-24">
+               <Portfolio />
+               <Footer />
             </div>
           </>
         } />

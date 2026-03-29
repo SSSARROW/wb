@@ -74,14 +74,13 @@ const Navbar = () => {
           />
         </motion.a>
 
-        {/* Desktop Menu */}
         <motion.ul
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="hidden xl:flex justify-end gap-10 font-medium text-base ml-auto"
         >
-          {["Why Us?", "Services",  "Careers"].map((item, index) => {
+          {["Why Us?", "Services", "Portfolio", "Careers"].map((item, index) => {
             const sectionId = item === "Why Us?" ? "why" : item.toLowerCase();
             return (
               <motion.li
@@ -96,6 +95,9 @@ const Navbar = () => {
                   onClick={() => {
                     if (item === "Careers") {
                       navigate("/careers"); // Navigate to careers page
+                      setIsMenuOpen(false);
+                    } else if (item === "Portfolio") {
+                      navigate("/portfolio"); // Navigate to portfolio page
                       setIsMenuOpen(false);
                     } else {
                       navigateToSection(sectionId); // Scroll to section on home page without hash
@@ -143,7 +145,7 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-6 py-4">
           <ul className="flex flex-col space-y-3">
-            {["Why Us?", "Services",  "Careers"].map((item, index) => {
+            {["Why Us?", "Services", "Portfolio", "Careers"].map((item, index) => {
               const sectionId = item === "Why Us?" ? "why" : item.toLowerCase();
               return (
                 <motion.li
@@ -159,6 +161,9 @@ const Navbar = () => {
                     onClick={() => {
                       if (item === "Careers") {
                         navigate("/careers"); // Navigate to careers page
+                        setIsMenuOpen(false);
+                      } else if (item === "Portfolio") {
+                        navigate("/portfolio"); // Navigate to portfolio page
                         setIsMenuOpen(false);
                       } else {
                         navigateToSection(sectionId); // Scroll to section on home page without hash
