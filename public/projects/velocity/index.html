@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#131313",
+              "primary-fixed": "#ffdad6",
+              "on-secondary-fixed": "#1b1c1c",
+              "tertiary": "#c6c6c7",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "outline": "#8e9192",
+              "on-background": "#e5e2e1",
+              "surface": "#131313",
+              "on-primary-container": "#e63f37",
+              "tertiary-fixed": "#e2e2e2",
+              "secondary": "#c8c6c5",
+              "primary": "#ffb4ab",
+              "on-error": "#690005",
+              "on-tertiary-fixed": "#1a1c1c",
+              "on-tertiary-container": "#7c7d7e",
+              "surface-variant": "#353534",
+              "background": "#131313",
+              "outline-variant": "#444748",
+              "on-error-container": "#ffdad6",
+              "on-tertiary": "#2f3131",
+              "error": "#ffb4ab",
+              "inverse-on-surface": "#313030",
+              "on-surface": "#e5e2e1",
+              "on-primary-fixed-variant": "#93000b",
+              "primary-fixed-dim": "#ffb4ab",
+              "primary-container": "#2f0001",
+              "error-container": "#93000a",
+              "on-secondary": "#303030",
+              "surface-container-high": "#2a2a2a",
+              "tertiary-container": "#101213",
+              "surface-container-highest": "#353534",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-primary": "#690005",
+              "secondary-container": "#474747",
+              "surface-container-low": "#1c1b1b",
+              "secondary-fixed": "#e4e2e1",
+              "surface-container-lowest": "#0e0e0e",
+              "on-surface-variant": "#c4c7c7",
+              "on-tertiary-fixed-variant": "#454747",
+              "on-secondary-container": "#b6b5b4",
+              "inverse-surface": "#e5e2e1",
+              "on-secondary-fixed-variant": "#474747",
+              "surface-bright": "#393939",
+              "surface-container": "#201f1f",
+              "surface-tint": "#ffb4ab",
+              "inverse-primary": "#b91c1c",
+              "on-primary-fixed": "#410002"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .serif-display {
+            font-family: 'Noto Serif', serif;
+        }
+        body {
+            scroll-behavior: smooth;
+        }
+        [data-aos] {
+            pointer-events: none;
+        }
+        .aos-animate {
+            pointer-events: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="bg-surface-container-lowest text-on-surface selection:bg-inverse-primary selection:text-white">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-xl flex justify-between items-center px-12 py-6 w-full no-border shadow-none">
+<div class="text-2xl font-bold tracking-tighter text-white font-serif">OBSIDIAN</div>
+<div class="hidden md:flex gap-12 items-center">
+<a class="font-serif text-white tracking-widest uppercase text-red-500 font-bold border-b border-red-600" href="#">Models</a>
+<a class="font-serif text-white tracking-widest uppercase text-gray-400 hover:text-white transition-colors" href="#">Inventory</a>
+<a class="font-serif text-white tracking-widest uppercase text-gray-400 hover:text-white transition-colors" href="#">Heritage</a>
+<a class="font-serif text-white tracking-widest uppercase text-gray-400 hover:text-white transition-colors" href="#">Inquiry</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-white hover:bg-white/10 transition-all duration-500 p-2 active:scale-95 duration-700 ease-in-out">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<<main class="w-full">
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0" data-aos="zoom-out" data-aos-duration="2000">
+<img alt="Luxury matte black performance car" class="w-full h-full object-cover opacity-60" data-alt="dramatic side profile of a sleek matte black luxury hypercar in a dark studio with sharp rim lighting highlighting its aerodynamic curves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATRBz4ICF5bsrF9TTkCqaES2WA0Zws_PmUtgxdjNTX_A5Mqr6YHLfhHXTA6dBrgVAEz2eV43gPQldnCLMngLZUtzNkn-XmV5IBeUsQU3Q4nMpqyqLUPAu950OHMv4PmLN19qqY9U7g-Ro1mTJSk5oIcCefppnRVq76AXvSUEr6SlZwTQQouV5EQLiY8rbX6wrO-jzBtSJ7d_P-cSllkG_k_jarc1fsLV7M3mT_frCa_kbjd-JydnwkORb1LyClRnD6cum2K9C4xw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 px-12 md:px-24 w-full" data-aos="fade-up" data-aos-delay="400">
+<div class="max-w-4xl">
+<h1 class="serif-display text-7xl md:text-9xl font-bold text-white leading-none tracking-tighter mb-6">
+                        THE APEX OF <br/> <span class="text-inverse-primary">VELOCITY</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-xl mb-12 tracking-wide">
+                        A showcase of performance and precision. Engineered for those who demand absolute mastery over the road.
+                    </p>
+<div class="flex flex-wrap gap-6">
+<button class="bg-inverse-primary text-white font-bold px-12 py-5 tracking-widest uppercase text-xs hover:bg-red-700 transition-colors duration-500 flex items-center gap-3">
+                            Explore Collection
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="border border-outline-variant/20 text-white font-bold px-12 py-5 tracking-widest uppercase text-xs hover:bg-white/5 transition-colors duration-500">
+                            Book Inquiry
+                        </button>
+</div>
+</div>
+</div>
+<!-- Absolute Position Technical Specs -->
+<div class="absolute bottom-12 right-12 hidden xl:block text-right" data-aos="fade-left" data-aos-delay="800">
+<div class="mb-4">
+<p class="text-neutral-500 text-[10px] uppercase tracking-[0.3em]">0-100 KM/H</p>
+<p class="serif-display text-4xl text-white">2.4s</p>
+</div>
+<div class="mb-4">
+<p class="text-neutral-500 text-[10px] uppercase tracking-[0.3em]">Top Speed</p>
+<p class="serif-display text-4xl text-white">355 KM/H</p>
+</div>
+</div>
+</section>
+<!-- Featured Models: Asymmetric Bento Grid -->
+<section class="py-32 px-12 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8" data-aos="fade-up">
+<h2 class="serif-display text-5xl text-white">Featured Models</h2>
+<p class="font-body text-on-surface-variant max-w-md">Our current fleet represents the culmination of decades of carbon-fiber engineering and aerodynamic refinement.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Velocity GT Card -->
+<div class="md:col-span-8 group relative aspect-[16/9] bg-surface-container-low overflow-hidden" data-aos="fade-right">
+<img alt="Velocity GT" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000" data-alt="Extreme close up of a carbon fiber rear wing and tail lights of a high-performance sports car at dusk with glowing red accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQo1etuWY16_AStdYY2TYpaoht6eXbmhjtId8wzR1yLWJHIck7TKsujwsQyMPZ0ohWYP2SwKQdZGRYBvH25tYbloMcVaw_Yc-rbPSwlxj6TA7F4OkJpHnWfaTbPhaGXjbwFv5Trv2Aod9E-R4fT7mvd34vmTb223TpRVrGPYzIgNBqs4Axz5-WX3qFsCiJ2-hy4YtJVsYFNBAAMciSL-UYezsat5k6VjFI_nMX0ZAXmjp03h1LWHlZeZGgVkVLBfGKpZHkJoVW0g"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent flex flex-col justify-end p-12">
+<h3 class="serif-display text-5xl text-white mb-2">Velocity GT</h3>
+<p class="text-red-500 tracking-[0.4em] uppercase text-xs font-bold mb-6">Track Focused</p>
+<button class="w-fit text-white border-b border-white/20 pb-1 hover:border-red-600 transition-colors uppercase tracking-widest text-[10px]">View Specifications</button>
+</div>
+</div>
+<!-- Side Spec Overlay Card -->
+<div class="md:col-span-4 bg-surface-container-high p-12 flex flex-col justify-between" data-aos="fade-left">
+<div>
+<span class="material-symbols-outlined text-red-600 mb-8" data-icon="bolt">bolt</span>
+<h4 class="serif-display text-2xl text-white mb-4">Electric Integration</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">
+                                The Obsidian hybrid powertrain delivers instant torque while maintaining the soul of a naturally aspirated V12.
+                            </p>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between border-b border-outline-variant/10 py-2">
+<span class="text-neutral-500 text-[10px] uppercase">Peak Power</span>
+<span class="text-white text-[10px]">1,200 BHP</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 py-2">
+<span class="text-neutral-500 text-[10px] uppercase">Engine</span>
+<span class="text-white text-[10px]">6.5L V12 Hybrid</span>
+</div>
+</div>
+</div>
+<!-- Obsidian X Card -->
+<div class="md:col-span-5 bg-surface-container-low p-12 flex flex-col justify-center border-l-4 border-red-600" data-aos="fade-up">
+<h3 class="serif-display text-4xl text-white mb-4 italic">Obsidian X</h3>
+<p class="text-on-surface-variant mb-10 text-sm italic">"The definitive grand tourer for the modern era. Unapologetic power meets uncompromising luxury."</p>
+<img alt="Obsidian X interior" class="w-full h-48 object-cover mt-4 grayscale hover:grayscale-0 transition-all duration-700" data-alt="interior cockpit of a luxury car featuring hand-stitched black leather with red diamond patterns and illuminated digital dashboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcCBMq9iHtpJRqeO7JhB8Cy58Il1WGMvq4_47BiuarU2O3WlH-3eekgn6_j0FnSLuZTJm7e2ws_Jv0ulXC6BjIU7opZUcjBfr-TnM9z_SlyEB4odz-r6laSK9NU1FG_FQLwP-SwoN8P7boyVjQPmi1DCLaEEpfyEqAYCXDFgNRcx2JRikqrOkcPbl2BDo1rbJXQl4WeGM5cfea4FWZMHtD7dKtT_bqzeOJwlr8-EdtNN8z4Buhv2JQvvPxJ1GdoikbY1tb6R4l4w"/>
+</div>
+<div class="md:col-span-7 group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+<img alt="Obsidian X exterior" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-1000" data-alt="Full view of a luxury charcoal gray sedan parked in front of a modern architectural concrete building during blue hour" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAB-sHU9RHujG9kZnJHIB-Un2O56CLiEV3glRa_ouJg1bvEgoNBp6258cmO1kHVzgb1tAogfVUf2gwfh-cG5QEEEp99DGTKcNjfoiBhRpSZEKXhRr9wg4EXSh7YV_on3wtcjbUk6cQ9VPbxpdeDD3L3vx8kQwNu6SjcDBwLoUrkL2OoWEiPomphrtcAMs6Codke8-bM1cjoTfckdxekmqMSgRQpwCiDbZ8PbyOz8rrBTO42JHjE2YtFLLbppQNyTU-eGpPf8fzwQ"/>
+<div class="absolute top-0 right-0 p-8">
+<span class="bg-black/40 backdrop-blur-md px-4 py-2 text-[10px] tracking-widest text-white uppercase">New Release</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Heritage Section -->
+<section class="py-40 bg-surface-container-lowest relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative order-2 lg:order-1" data-aos="fade-right">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img alt="Craftsmanship" class="w-full h-full object-cover" data-alt="close up of a craftsman's hands carefully polishing a chrome hood ornament on a vintage car with shallow depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQyQd7CcELjfzSo_CR9c6Xre6N9wWdr0c_WXa6LSdcABN5Y0jSiAKBTpJrCsSCaZMteu-mjalDg9I8L0ysXDGy7OW8bchE2TYTIe0nKAQF5JXudYraMo8GGdqlYQ0tPrzWHBK7zmqlyYxefBfvCwuJnFTmkjy_mCTZQGtmnc431TUU7sHuCu1jsXeDwsQ-545mq1RnXeKh-c3mRxJRrzJ2Db-dlccK3Pp5iiZ-hwAnznEacfzE_ObvJYdl_mpBbiep0rv_Rv1twA"/>
+</div>
+<!-- Overlapping small image -->
+<div class="absolute -bottom-12 -right-12 w-1/2 aspect-square bg-surface-container-high p-4 border border-outline-variant/10 hidden md:block">
+<img alt="Engine detail" class="w-full h-full object-cover" data-alt="macro shot of polished metal engine components with precision machined surfaces and red electrical wiring" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDHhiwWDJGRJ1hWE73-X-SRo4t8N4XNaI23SP6b4y9V96lCmlh_enCzCVwe27yUKyybbTpdwsdOZdp0GQOnSjEvqeKNw9USTHnW00qvMRk91IimYQqa2r19OKDOihuopLbymchXq5h68_uJOD2jUkpR51_7ARS7Ofc3ZfmSPoIJeJq5Lp_jit7nq3i544D7mFqWCjxwhUiPzCw7TAwDb5CubRO547_IzZvhxaVE2khblVNWzK4ffUb8mtF73OyhJ6Z3PmlbBnXLQ"/>
+</div>
+</div>
+<div class="order-1 lg:order-2" data-aos="fade-left">
+<span class="text-red-600 tracking-[0.5em] uppercase text-xs font-bold mb-8 block">Legacy &amp; Spirit</span>
+<h2 class="serif-display text-6xl text-white mb-10 leading-tight">Heritage of Hand-Forged Excellence</h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-8">
+                        Founded in the heart of industrial innovation, Obsidian Motors has never been about volume. We are about the ritual of the drive. Every chassis is hand-welded, every interior hand-stitched, and every engine signed by its master technician.
+                    </p>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-12 italic">
+                        "We don't build cars. We sculpt gravity."
+                    </p>
+<div class="grid grid-cols-2 gap-8 border-t border-outline-variant/20 pt-12">
+<div>
+<p class="serif-display text-3xl text-white">1964</p>
+<p class="text-neutral-500 text-[10px] uppercase tracking-widest mt-2">Established</p>
+</div>
+<div>
+<p class="serif-display text-3xl text-white">12,000+</p>
+<p class="text-neutral-500 text-[10px] uppercase tracking-widest mt-2">Unique Builds</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-32 bg-surface text-center px-12 border-y border-outline-variant/10 overflow-hidden" data-aos="zoom-in">
+<div class="max-w-2xl mx-auto">
+<h2 class="serif-display text-4xl text-white mb-8">Define Your Statement</h2>
+<p class="text-on-surface-variant mb-12">Commission your bespoke Obsidian model today. Our atelier is ready to translate your vision into titanium and leather.</p>
+<button class="bg-white text-black font-bold px-16 py-6 tracking-widest uppercase text-xs hover:bg-neutral-200 transition-colors duration-500">
+                    Contact Atelier
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 border-t border-neutral-900 bg-neutral-950">
+<div class="max-w-7xl mx-auto px-12 flex flex-col items-center gap-8 fade-in duration-500">
+<div class="flex gap-12 flex-wrap justify-center mb-8">
+<a class="font-sans text-[10px] uppercase tracking-widest text-neutral-600 hover:text-red-500 transition-all" href="#">Privacy Policy</a>
+<a class="font-sans text-[10px] uppercase tracking-widest text-neutral-600 hover:text-red-500 transition-all" href="#">Terms of Service</a>
+<a class="font-sans text-[10px] uppercase tracking-widest text-neutral-600 hover:text-red-500 transition-all" href="#">Press</a>
+<a class="font-sans text-[10px] uppercase tracking-widest text-neutral-600 hover:text-red-500 transition-all" href="#">Careers</a>
+</div>
+<div class="flex gap-8 mb-12">
+<span class="material-symbols-outlined text-neutral-600 cursor-pointer hover:text-white" data-icon="share">share</span>
+<span class="material-symbols-outlined text-neutral-600 cursor-pointer hover:text-white" data-icon="public">public</span>
+<span class="material-symbols-outlined text-neutral-600 cursor-pointer hover:text-white" data-icon="play_circle">play_circle</span>
+</div>
+<p class="font-sans text-[10px] uppercase tracking-widest text-neutral-500">© 2024 OBSIDIAN MOTORS. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+    });
+</script>
+<!-- Floating Contact FAB -->
+<div class="fixed bottom-12 right-12 z-50">
+<button class="bg-inverse-primary text-white w-16 h-16 flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Inter:wght@400;700;900&amp;family=Lexend:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#541100",
+              "on-tertiary-fixed": "#1a1c1c",
+              "on-primary": "#601400",
+              "on-surface": "#e2e2e2",
+              "on-secondary-fixed": "#1b1c1c",
+              "on-primary-fixed": "#3b0900",
+              "secondary-fixed": "#e4e2e2",
+              "tertiary": "#c6c6c7",
+              "surface-container-lowest": "#0e0e0e",
+              "error-container": "#93000a",
+              "on-primary-fixed-variant": "#872000",
+              "surface-container-highest": "#353535",
+              "on-tertiary-fixed-variant": "#454747",
+              "tertiary-container": "#909191",
+              "outline-variant": "#5d4038",
+              "on-error-container": "#ffdad6",
+              "on-secondary-container": "#b6b5b4",
+              "background": "#131313",
+              "on-tertiary-container": "#282a2a",
+              "secondary-container": "#464747",
+              "surface": "#131313",
+              "on-surface-variant": "#e7bdb2",
+              "inverse-primary": "#b12d00",
+              "outline": "#ad887e",
+              "on-tertiary": "#2f3131",
+              "primary": "#ffb5a0",
+              "surface-bright": "#393939",
+              "surface-container": "#1f1f1f",
+              "primary-fixed": "#ffdbd1",
+              "primary-container": "#ff5625",
+              "surface-tint": "#ffb5a0",
+              "inverse-surface": "#e2e2e2",
+              "on-secondary": "#303030",
+              "surface-container-high": "#2a2a2a",
+              "secondary-fixed-dim": "#c8c6c6",
+              "secondary": "#c8c6c6",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "on-error": "#690005",
+              "on-secondary-fixed-variant": "#464747",
+              "primary-fixed-dim": "#ffb5a0",
+              "error": "#ffb4ab",
+              "tertiary-fixed": "#e2e2e2",
+              "surface-container-low": "#1b1b1b",
+              "surface-variant": "#353535",
+              "surface-dim": "#131313",
+              "inverse-on-surface": "#303030",
+              "on-background": "#e2e2e2"
+            },
+            fontFamily: {
+              "archivo": ["Archivo Black", "sans-serif"],
+              "headline": ["Lexend", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kinetic-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            color: transparent;
+        }
+        .kinetic-stroke-heavy {
+            -webkit-text-stroke: 2px #FFFFFF;
+            color: transparent;
+        }
+        body {
+            background-color: #131313;
+            color: #e2e2e2;
+            scroll-behavior: smooth;
+        }
+        [data-aos] {
+            pointer-events: none;
+        }
+        .aos-animate {
+            pointer-events: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 h-20 bg-neutral-950/80 backdrop-blur-xl flex justify-between items-center px-10 w-full max-w-full">
+<div class="text-2xl font-archivo font-black italic tracking-tighter text-white uppercase">KINETIC</div>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-archivo text-xs tracking-widest font-black uppercase text-orange-600 border-b-2 border-orange-600 pb-1 hover:text-white transition-colors duration-300" href="#">SHOP</a>
+<a class="font-archivo text-xs tracking-widest font-black uppercase text-neutral-400 hover:text-white transition-colors duration-300" href="#">COLLECTIONS</a>
+<a class="font-archivo text-xs tracking-widest font-black uppercase text-neutral-400 hover:text-white transition-colors duration-300" href="#">COMMUNITY</a>
+<a class="font-archivo text-xs tracking-widest font-black uppercase text-neutral-400 hover:text-white transition-colors duration-300" href="#">STORY</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-white hover:text-orange-600 transition-colors transform active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-surface">
+<div class="absolute inset-0 z-0" data-aos="zoom-out" data-aos-duration="2000">
+<img alt="Athletic Hero" class="w-full h-full object-cover grayscale opacity-60" data-alt="dramatic wide shot of a muscular athlete in a dark concrete gym space with harsh cinematic top lighting and shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjjXyP_x8-SvxxsFRvCq3Xqea1ISE4fyIrEsF_SxQKFpPGRcbgJy4nE0PXazfzhnuqHKWwI_593kexeJ4yGZillOxRXUU3jPwflIfa89dso-646HkttbsmbLDubkmJirW1on-nEuwfaET_5UfWL9H4hL8I1XBzKGUD3iK09Uwpt2hfk6lCIiNu3bQYwKcJ6f3csIYn4fF9c67nrpWl5gmi6x7690AM8Z1ETrpNidDA07lGXjq-b9sVOGYaDvlLWAn_VNrhbdhEcIU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-4" data-aos="fade-up" data-aos-delay="300">
+<h1 class="font-archivo text-7xl md:text-9xl lg:text-[12rem] leading-none tracking-tighter mb-8 italic">
+<span class="block">UNLEASH</span>
+<span class="block kinetic-stroke-heavy">THE POWER</span>
+</h1>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6 mt-12">
+<button class="bg-primary-container text-on-primary-container px-12 py-5 font-archivo text-sm tracking-widest font-black uppercase transition-all hover:brightness-110 active:scale-95">
+                        SHOP DROP 01
+                    </button>
+<button class="border-2 border-on-surface text-on-surface px-12 py-5 font-archivo text-sm tracking-widest font-black uppercase hover:bg-on-surface hover:text-background transition-all active:scale-95">
+                        EXPLORE TECH
+                    </button>
+</div>
+</div>
+<!-- Absolute decorative text -->
+<div class="absolute bottom-10 left-10 hidden lg:block" data-aos="fade-right" data-aos-delay="1000">
+<p class="font-archivo text-xs tracking-[0.5em] text-neutral-500 uppercase">PERFORMANCE ENGINEERING / 2024</p>
+</div>
+</section>
+<!-- Product Grid: GEAR ESSENTIALS -->
+<section class="bg-surface py-28 px-6 md:px-10 lg:px-20 overflow-hidden">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8" data-aos="fade-up">
+<div>
+<span class="text-primary-container font-archivo text-sm tracking-widest font-black uppercase mb-4 block">EQUIPMENT</span>
+<h2 class="font-archivo text-5xl md:text-7xl leading-tight uppercase">GEAR<br/>ESSENTIALS</h2>
+</div>
+<div class="max-w-md text-neutral-400 font-body text-lg leading-relaxed text-right">
+                    Engineered for the elite. Every seam is a statement of intent. Every fiber is optimized for momentum.
+                </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Product Card 1 -->
+<div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-lowest relative mb-8">
+<img alt="APEX RUNNER SET" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="studio shot of premium black athletic compression wear on a minimalist grey background with high contrast shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtDfn5CivE6Iky7pPgEHSLVFJaKCxvf8bMz-q4ULZ4MhYmqYUXA9FWVpAZtzYUeuSUPtwIW5x5qTN2mOnAYfTuDEOPv9Bw3dJCGzV3pWJEXCW-wrTjEeDexFE27tcZIAMZXB8J8DpgrdBjKh-dRhVS3BdY8cUDNwLXE2qJsWHyJCCF-OP3ijzN_G1TyhqeYxv47d1AnaJwtRP82U733VZtjK9iwttxA8sEQ6mRfuSQvPUkDFjPJspx6Le6eVUGke6C08wDtsb7ivI"/>
+<div class="absolute top-4 right-4 bg-primary-container text-on-primary-container px-3 py-1 font-archivo text-[10px] font-black uppercase">
+                            NEW DROP
+                        </div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-archivo text-xl uppercase mb-1">APEX RUNNER SET</h3>
+<p class="text-neutral-500 font-label text-xs tracking-widest uppercase">BLACK / VOLT</p>
+</div>
+<span class="font-archivo text-xl text-primary-container">$180.00</span>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-lowest relative mb-8">
+<img alt="TITAN TANK" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close up of a high tech athletic tank top fabric texture showing moisture-wicking weave in a dark obsidian finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzOwB4fUp45RdD3CI7d_P7SxARoXLYGNGYKjOkG28H7Xtk5qDzCW7_MqWNTnIdDps2mFsaZJl65lX2mQ7oL6XBNsTz7qtgH1Q-BRWXCmlIV3_udHBE7pzNR27iH2K7-3OCfwDjm6scQnQFcd4xyceLi7Y_ygIH5kOfy9PxcjB86iYY_0TzEomAVHXbid5UAfpxn5ouhZabruZFILdIheYro-xTvKJCdiad2DpbOOljSyjqIA_uwLDKd2h9OVfUQNZksoaJ1khN9VM"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-archivo text-xl uppercase mb-1">TITAN TANK</h3>
+<p class="text-neutral-500 font-label text-xs tracking-widest uppercase">STEEL / OBSIDIAN</p>
+</div>
+<span class="font-archivo text-xl text-primary-container">$65.00</span>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="600">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-lowest relative mb-8">
+<img alt="KINETIC SHORT" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="professional athlete running mid-stride wearing sleek black shorts against an urban concrete background at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_RZQqOD3kLV2cGbeKsMXG6BiNLC67d_wVq7rIu1skJgCzdbapyZgH3emKeI_WsWAk2wGcoKrNrpu0MBf2h5VKaCCMDRAbUstWbL7NqNg9jNzhVc65N-L0502bSQdZ7kTy9uTBqs0CrlaQHlsl4xrhr8MTlDYXOJYyjsHjuslWzeh2v5KoizCY89N2dVjmtx1FdAkW3yUL6rAxPXEkBPppQmdAOu0H4Ie_knICg4LmG4cfVOKACaoozwTFJv1u0Jvwhj_4uM9xv98"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-archivo text-xl uppercase mb-1">KINETIC SHORT</h3>
+<p class="text-neutral-500 font-label text-xs tracking-widest uppercase">CARBON / BLACK</p>
+</div>
+<span class="font-archivo text-xl text-primary-container">$85.00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bold Interrupter Banner -->
+<section class="bg-primary-container py-32 overflow-hidden flex items-center" data-aos="zoom-in">
+<div class="whitespace-nowrap flex animate-none">
+<div class="flex items-center gap-10 px-5">
+<span class="font-archivo text-8xl md:text-[12rem] font-black text-on-primary-container uppercase">PULSE</span>
+<span class="font-archivo text-8xl md:text-[12rem] font-black kinetic-stroke uppercase" style="-webkit-text-stroke: 4px #541100;">PULSE</span>
+<span class="font-archivo text-8xl md:text-[12rem] font-black text-on-primary-container uppercase">PULSE</span>
+<span class="font-archivo text-8xl md:text-[12rem] font-black kinetic-stroke uppercase" style="-webkit-text-stroke: 4px #541100;">PULSE</span>
+</div>
+</div>
+</section>
+<!-- Vision Section -->
+<section class="bg-surface py-28 px-6 md:px-10 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center overflow-hidden">
+<div class="relative" data-aos="fade-right">
+<div class="aspect-square bg-surface-container relative z-10">
+<img alt="Why We Exist" class="w-full h-full object-cover grayscale" data-alt="black and white intense close-up of an athlete sweating and focusing during high intensity training with dramatic side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS1QCDeXpaMSpQKGKYN62BvD0I_dhZj969KmtnywwJ91J6Y5DGc_cN90BBNDVO-Qr_iU89KXsTeBb-wzenrjpVyV_rF-kvv8hFr8qnHFBjE908soJg3TmLEny0vVK3vU2Vwcpg0YOSTY8N7gHXItnxm24wEeTm3q7yI1BAHZ4U1GyJyFybgnGHLT6ZQkxy-pR7sFk2kf8s_Cu7KJnpY86GQ1lvElJoIQm9igTEe5YyvlZhJiu97xjUCwZdoAz1zRW_qC4jfglm-Wc"/>
+</div>
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary-container -z-0"></div>
+<div class="absolute -bottom-10 -left-10 w-full h-px bg-outline-variant/20 -z-0"></div>
+</div>
+<div class="space-y-12" data-aos="fade-left">
+<span class="text-primary-container font-archivo text-sm tracking-widest font-black uppercase">OUR MANIFESTO</span>
+<h2 class="font-archivo text-6xl md:text-8xl leading-[0.9] uppercase">WHY WE<br/>EXIST.</h2>
+<div class="space-y-8 max-w-lg">
+<p class="font-body text-xl text-neutral-300 leading-relaxed">
+                        Kinetic wasn't born in a boardroom. It was born in the grit of 4 AM sessions, the burn of the final mile, and the silence of absolute focus.
+                    </p>
+<p class="font-body text-neutral-400 leading-relaxed">
+                        We build gear for those who find comfort in the uncomfortable. Our engineering is obsessive because your performance is non-negotiable. Minimalist aesthetics, maximum utility—that is the Kinetic standard.
+                    </p>
+<a class="inline-flex items-center gap-4 text-primary-container font-archivo text-sm tracking-widest font-black uppercase group" href="#">
+                        READ OUR FULL STORY
+                        <span class="material-symbols-outlined transform group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Technical Specs / Feature Bento -->
+<section class="bg-surface-container-low py-28 px-6 md:px-10 lg:px-20 overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-2 bg-surface-container-lowest p-12 flex flex-col justify-between h-[400px]" data-aos="fade-right">
+<span class="material-symbols-outlined text-5xl text-primary-container" data-icon="air">air</span>
+<div>
+<h4 class="font-archivo text-3xl uppercase mb-4">AERO-MESH TECH</h4>
+<p class="text-neutral-400 font-body">Patented weave pattern that maximizes airflow where heat intensity is highest.</p>
+</div>
+</div>
+<div class="md:col-span-2 bg-surface p-0 overflow-hidden h-[400px]" data-aos="fade-left">
+<img alt="Tech Feature" class="w-full h-full object-cover grayscale" data-alt="abstract macro photography of high tech black carbon fiber textile with deep shadows and sharp highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnjuZE3wi5Npr149UHjNCq0jD63rj1LyrzBqDD1JVAkghXxqSkdS5GInmdlcDMnPikaqe7logxQ0YUsCG0rTZrAr8uCUMMSHxJkgTdVK7C_eq2G44DXxjV1xKcKwsJ0ZSVanEEt5ZsMd0Sxa7ERvbHxCsN4ccfD68OHWzOwdzy8SFd0DJlkG6lx82xTjdvGjUhys-IIdamN4VBNAUvDtZmnrhgYz78DUzbX5gUg1OwNzKNgHAjLkFjbXbJkGSv4qwy33t3Ah0dgD0"/>
+</div>
+<div class="md:col-span-1 bg-surface-container p-10 h-[300px] flex flex-col justify-end" data-aos="fade-up" data-aos-delay="100">
+<h4 class="font-archivo text-xl uppercase mb-2">ZERO FRICTION</h4>
+<p class="text-neutral-500 text-sm">Laser-cut seams eliminate chafing during high-velocity movements.</p>
+</div>
+<div class="md:col-span-1 bg-primary-container p-10 h-[300px] flex flex-col justify-end" data-aos="fade-up" data-aos-delay="200">
+<h4 class="font-archivo text-xl text-on-primary-container uppercase mb-2">DYNAMIC COMPRESSION</h4>
+<p class="text-on-primary-container/80 text-sm">Graduated pressure zones support key muscle groups.</p>
+</div>
+<div class="md:col-span-2 bg-surface-container-highest p-10 h-[300px] flex flex-col justify-end" data-aos="fade-up" data-aos-delay="300">
+<h4 class="font-archivo text-xl uppercase mb-2">SUSTAINABLE PERFORMANCE</h4>
+<p class="text-neutral-400 text-sm">80% of our Drop 01 materials are sourced from reclaimed ocean polymers.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-neutral-900 w-full py-16 px-10 border-t border-neutral-800">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+<div class="space-y-8">
+<div class="text-lg font-black text-white font-archivo italic uppercase tracking-tighter">KINETIC</div>
+<p class="text-neutral-500 font-inter text-sm max-w-xs leading-relaxed">
+                    REDEFINING THE BOUNDARIES OF PERFORMANCE APPAREL THROUGH BRUTALIST DESIGN AND KINETIC ENGINEERING.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-neutral-700 flex items-center justify-center hover:bg-white hover:text-black transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="public">public</span>
+</a>
+<a class="w-10 h-10 border border-neutral-700 flex items-center justify-center hover:bg-white hover:text-black transition-all" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="podcasts">podcasts</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h5 class="text-white font-archivo text-xs tracking-widest font-black uppercase">SHOP</h5>
+<ul class="space-y-2">
+<li><a class="font-inter text-sm tracking-normal text-neutral-500 hover:text-orange-600 transition-colors" href="#">SHOP ALL</a></li>
+<li><a class="font-inter text-sm tracking-normal text-neutral-500 hover:text-orange-600 transition-colors" href="#">NEW ARRIVALS</a></li>
+<li><a class="font-inter text-sm tracking-normal text-neutral-500 hover:text-orange-600 transition-colors" href="#">BEST SELLERS</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-white font-archivo text-xs tracking-widest font-black uppercase">SUPPORT</h5>
+<ul class="space-y-2">
+<li><a class="font-inter text-sm tracking-normal text-neutral-500 hover:text-orange-600 transition-colors" href="#">SUPPORT</a></li>
+<li><a class="font-inter text-sm tracking-normal text-neutral-500 hover:text-orange-600 transition-colors" href="#">SHIPPING</a></li>
+<li><a class="font-inter text-sm tracking-normal text-neutral-500 hover:text-orange-600 transition-colors" href="#">RETURNS</a></li>
+<li><a class="font-inter text-sm tracking-normal text-neutral-500 hover:text-orange-600 transition-colors" href="#">TERMS</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-6">
+<h5 class="text-white font-archivo text-xs tracking-widest font-black uppercase">JOIN THE MOVEMENT</h5>
+<form class="relative">
+<input class="w-full bg-transparent border-0 border-b-2 border-neutral-700 focus:ring-0 focus:border-orange-600 py-3 font-archivo text-xs tracking-widest placeholder:text-neutral-700 uppercase" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="absolute right-0 bottom-3 text-orange-600 hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</form>
+<p class="text-[10px] text-neutral-600 font-inter uppercase tracking-tighter">SUBSCRIBE TO RECEIVE INTEL ON FUTURE DROPS AND EXCLUSIVE ACCESS.</p>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-neutral-500 font-inter text-[10px] tracking-widest uppercase">© 2024 KINETIC ATHLETICS. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-8">
+<span class="text-neutral-700 font-inter text-[10px] tracking-widest uppercase">DESIGNED BY PULSE LABS</span>
+<span class="text-neutral-700 font-inter text-[10px] tracking-widest uppercase">Bv-04.88</span>
+</div>
+</div>
+</footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+    });
+</script>
+</body></html>

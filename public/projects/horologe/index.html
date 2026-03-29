@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#e9c349",
+              "surface-container-highest": "#353534",
+              "on-background": "#e5e2e1",
+              "tertiary-fixed": "#e2e2e2",
+              "surface-container-lowest": "#0e0e0e",
+              "primary-fixed": "#ffe088",
+              "inverse-on-surface": "#313030",
+              "secondary-container": "#474746",
+              "tertiary-container": "#b2b3b3",
+              "on-tertiary-fixed": "#1a1c1c",
+              "primary": "#f2ca50",
+              "on-surface-variant": "#d0c5af",
+              "surface-variant": "#353534",
+              "outline": "#99907c",
+              "tertiary": "#cecece",
+              "primary-fixed-dim": "#e9c349",
+              "on-surface": "#e5e2e1",
+              "surface-dim": "#131313",
+              "inverse-primary": "#735c00",
+              "tertiary-fixed-dim": "#c6c6c7",
+              "outline-variant": "#4d4635",
+              "surface": "#131313",
+              "on-error": "#690005",
+              "secondary-fixed": "#e5e2e1",
+              "primary-container": "#d4af37",
+              "on-primary-fixed": "#241a00",
+              "error-container": "#93000a",
+              "on-tertiary": "#2f3131",
+              "background": "#131313",
+              "on-tertiary-fixed-variant": "#454747",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-tertiary-container": "#434546",
+              "surface-container": "#201f1f",
+              "inverse-surface": "#e5e2e1",
+              "on-secondary-fixed-variant": "#474746",
+              "on-secondary-container": "#b7b5b4",
+              "surface-container-high": "#2a2a2a",
+              "error": "#ffb4ab",
+              "secondary": "#c8c6c5"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-gradient {
+            background: linear-gradient(45deg, #f2ca50 0%, #d4af37 100%);
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            background-color: rgba(19, 19, 19, 0.7);
+        }
+        .blackspace-transition {
+            background: linear-gradient(to bottom, #131313 0%, #0e0e0e 100%);
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #4d4635; }
+        body {
+            scroll-behavior: smooth;
+        }
+        [data-aos] {
+            pointer-events: none;
+        }
+        .aos-animate {
+            pointer-events: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/15">
+<div class="max-w-[1440px] mx-auto px-8 h-24 flex items-center justify-between">
+<div class="flex items-center gap-12">
+<a class="font-headline text-2xl font-bold tracking-tighter text-primary" href="#">HOROLOGE</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label text-xs uppercase tracking-[0.2em] hover:text-primary transition-colors" href="#">Collections</a>
+<a class="font-label text-xs uppercase tracking-[0.2em] hover:text-primary transition-colors" href="#">Heritage</a>
+<a class="font-label text-xs uppercase tracking-[0.2em] hover:text-primary transition-colors" href="#">Savoy-Faire</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="hover:text-primary transition-colors" data-icon="search"><span class="material-symbols-outlined">search</span></button>
+<button class="hover:text-primary transition-colors" data-icon="shopping_bag"><span class="material-symbols-outlined">shopping_bag</span></button>
+<button class="md:hidden" data-icon="menu"><span class="material-symbols-outlined">menu</span></button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen flex flex-col justify-center items-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 opacity-60" data-aos="zoom-out" data-aos-duration="2000">
+<img class="w-full h-full object-cover" data-alt="extreme close-up of a luxury mechanical watch movement with gold gears and polished surfaces on a deep black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiA2ozL0nxnvwkk_9Dv0DYge3qX6p-do70zwo_U6FqfKeV6IZx_qGKHa2iJCwCXxpeb7Q1Fpvsj9WCqSyZqwlPQYsQINxr3Ie_OX5xc3BKmTkT91yzvwwuMSH-zIqlpKKPVtNbfXx193vKjHTVouGSqpJa7H3xISTi0hr4Uu7jXBHU-6YGlHwexW6qEk97aepciN4Y2eDKKtF139akPPZY_zH7j9I-8SIatV4nx5zl68b4kSivBphazFsLFJ8o_LJ-XgwfZL-iNNQ"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="relative z-10 text-center px-4" data-aos="fade-up" data-aos-delay="400">
+<p class="font-label text-sm uppercase tracking-[0.4em] text-primary mb-6">Est. 1884 — Switzerland</p>
+<h1 class="font-headline text-5xl md:text-8xl lg:text-9xl mb-12 tracking-tight leading-none">The Obsidian<br/><span class="italic font-light">Eterna</span></h1>
+<div class="flex justify-center gap-8">
+<button class="gold-gradient text-on-primary px-12 py-5 font-label text-xs font-bold uppercase tracking-widest hover:brightness-110 transition-all">
+                    Explore Masterpiece
+                </button>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 flex flex-col items-center gap-4">
+<span class="font-label text-[10px] uppercase tracking-[0.3em] text-outline">Discover More</span>
+<div class="w-px h-16 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</section>
+<!-- Asymmetric Feature Section -->
+<section class="py-32 px-8 max-w-[1440px] mx-auto blackspace-transition overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-7 relative group" data-aos="fade-right">
+<div class="aspect-[4/5] bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" data-alt="portrait of a classic gold luxury watch with leather strap on a dark textured background with dramatic soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCId_v7nIY4ZzsoOJwZxJ8wadf-Ehmv_uXutxQRSK2a37ANTcgUDOxNxPBa7fGPU2PLwNDlkgCqgHvMVkJX9tLfY6oBeENeDtuMm3Sfifl8cZcpOw5xOlHLMhFch8luWXYshUCEZ-UW83mL9rhjGoPLnmC0bsoIla_Smh9R8pzE_vs34pMHceJOkokZV-kcfV7Sn3zoijFbOl7yiOuHfGbqgqeA82KO6H5jDbQGiDcmqIOCq7jFrvbzFRTDaa0nkNRSWtIqPmlFdPE"/>
+</div>
+</div>
+<div class="lg:col-span-5 lg:pl-16">
+<p class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4">Precision Engineering</p>
+<h2 class="font-headline text-4xl md:text-6xl mb-8 leading-tight">Architecture of <br/>Time Itself.</h2>
+<p class="text-on-surface-variant font-body text-lg leading-relaxed mb-10 max-w-md">
+                    Our master watchmakers spend over 400 hours assembling the Calibre 99X movement, a symphony of 324 individual components working in perfect unison.
+                </p>
+<a class="inline-block font-label text-xs uppercase tracking-[0.2em] border-b-2 border-primary pb-2 hover:text-primary transition-colors" href="#">
+                    Technical Specifications
+                </a>
+</div>
+</div>
+</section>
+<!-- The Complication Grid -->
+<section class="bg-surface-container-low py-24 border-y border-outline-variant/15">
+<div class="max-w-[1200px] mx-auto px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div class="flex flex-col items-center gap-4">
+<span class="font-label text-[10px] uppercase tracking-widest text-outline">Calibre</span>
+<div class="h-8 w-px bg-primary"></div>
+<span class="font-headline text-2xl">H-2401</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="font-label text-[10px] uppercase tracking-widest text-outline">Power Reserve</span>
+<div class="h-8 w-px bg-primary"></div>
+<span class="font-headline text-2xl">72 Hours</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="font-label text-[10px] uppercase tracking-widest text-outline">Water Resistance</span>
+<div class="h-8 w-px bg-primary"></div>
+<span class="font-headline text-2xl">100 Meters</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="font-label text-[10px] uppercase tracking-widest text-outline">Material</span>
+<div class="h-8 w-px bg-primary"></div>
+<span class="font-headline text-2xl">18K Aurum</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Product Grid -->
+<section class="py-32 px-8 max-w-[1440px] mx-auto overflow-hidden">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8" data-aos="fade-up">
+<div>
+<p class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-4">The Selection</p>
+<h2 class="font-headline text-5xl">Our Archive.</h2>
+</div>
+<a class="font-label text-xs uppercase tracking-[0.2em] text-outline hover:text-primary transition-colors mb-2" href="#">View Full Collection →</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Product 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low mb-8 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="minimalist watch with a dark face and silver metal mesh strap on a dark charcoal background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWEBaR52G3fNKTo8KljmbDWNKi2ihrQiVf7jvDY1gyrVZN4mRXrBnPg1pghxMY5dPmxcNNAabNCWOY6icNt_Ls91mjRNs869ysbQHMCejjBRPqiz78cdseLsPrVPQR9iyII8vN7CT9ux8CtIY2Y_Sla8vAHlQwmQ_EpKvNUkx06oxwCNZWYzqgdZJ-7XsJSASKTlLD4G53PLycd9jeUoOkzHySThDBkNhKSBqKrWjD_8QZY1yzzu5PM2yYGYwKa6dHFIBpoVPKWqg"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 font-label text-[10px] uppercase tracking-widest">Quick View</button>
+</div>
+</div>
+<h3 class="font-headline text-xl mb-1">Lunar Skeleton</h3>
+<p class="font-label text-xs text-outline uppercase tracking-widest">Palladium Case • $12,400</p>
+</div>
+<!-- Product 2 (Vertical offset for asymmetry) -->
+<div class="group cursor-pointer md:mt-24">
+<div class="aspect-[4/5] bg-surface-container-low mb-8 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="luxurious gold watch with black leather strap positioned on a piece of slate rock with side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAhm1-DputiLd1v3oG0PYrMjzRUZJa6TYLJyPt-2V-k9qkU9yySTnLapzYA2-PhMerSeFfECxPvqnQUO8jChbzePozqZLyVuLKco9o4eaiKI4LVTP91MvW6uVg5DaOoByuGpzKeAEVYZh5d2lIzSYG98Mg9n4xVyoAMnnL5Wpt_LE1D3MTbUBnk-YiPQfeZWDhmquLHmH5nZXQyopLME1YwN4g3AlzooDrxg_GwzoffsOOm1jD78yZAj2UfTI4jGK41DviYTi3GRU"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 font-label text-[10px] uppercase tracking-widest">Quick View</button>
+</div>
+</div>
+<h3 class="font-headline text-xl mb-1">Heritage Gold</h3>
+<p class="font-label text-xs text-outline uppercase tracking-widest">18K Yellow Gold • $18,900</p>
+</div>
+<!-- Product 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] bg-surface-container-low mb-8 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="close-up of an intricate watch face showing moon phase complication and white dial on a dark surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGiT4vKY5SDTnXJocVZBVsdZKWo3JUMFtWBJE5quQ204byir_WWrme2GjlWJDYJyKc_yL4vJjrFJTtGN3Ryf1a2B6S2ha83Z99EzEInaM2zZHwR3IOIa0l8FVpzJ7sjXNWHIuu7mhoIGdcLDPLY9G-rzw_Q_QU60RoWnr8vyVeWn-DPftXkaMES8NWHPcGROYjlHvGy1T-wP_DXdOX6hdlqSBiY3V_V8IE_va8SnKzzV8olEBcc2byuNLQ3fp9AT2y7OAk5So7igM"/>
+<div class="absolute inset-0 bg-surface/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="bg-primary text-on-primary px-8 py-3 font-label text-[10px] uppercase tracking-widest">Quick View</button>
+</div>
+</div>
+<h3 class="font-headline text-xl mb-1">Celestial Phase</h3>
+<p class="font-label text-xs text-outline uppercase tracking-widest">Moonphase Dial • $15,200</p>
+</div>
+</div>
+</section>
+<!-- Heritage CTA -->
+<section class="relative h-[614px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover brightness-[0.3]" data-alt="macro photo of watchmaking tools including small tweezers and magnifying loupe on a dark wooden workbench" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCueIeJsHkexhpYa5qz0N4P2z0SyeRHl0_j3giA6yu6CVBg-6b0GrwByTdmZxv57zq8PfddZUzWlLmib3jizKKNRAzYCpS8iRYrUdWN6W1eehESgtSGzrHgIjBy0himNy2ZSwM9SJMue0BWZvPEz6u5W9Lyy6weavwmUNP8VauOEWPYhEkPQZu6xyqhbMdjxh6ef1tym-Dfedt8MbgPaSyPzip7X5yKZHDKsh3TbkBqQk5ZrtPanvsTmKdhW4Wra9QYYfhjxwpXLw0"/>
+</div>
+<div class="relative z-10 text-center max-w-2xl px-8">
+<h2 class="font-headline text-4xl md:text-5xl mb-8">The Legacy of Hands.</h2>
+<p class="text-on-surface-variant font-body mb-10">Every Horologe timepiece is a dialogue between generations. We preserve the craft of the past while pioneering the precision of the future.</p>
+<button class="border border-outline px-12 py-5 font-label text-xs uppercase tracking-widest hover:bg-surface-container-high transition-colors">
+                Our Story
+            </button>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest pt-24 pb-12 border-t border-outline-variant/10">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+<div class="md:col-span-1">
+<h2 class="font-headline text-3xl font-bold tracking-tighter text-primary mb-8">HOROLOGE</h2>
+<p class="text-outline text-sm leading-relaxed max-w-xs">
+                        Curators of the world's most precise moments. Handcrafted in Neuchâtel, Switzerland.
+                    </p>
+</div>
+<div>
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-8">Navigation</h4>
+<ul class="flex flex-col gap-4 text-on-surface-variant text-sm font-light">
+<li><a class="hover:text-on-surface transition-colors" href="#">All Collections</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#">Boutique Finder</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#">Maintenance</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#">Journal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-8">Legal</h4>
+<ul class="flex flex-col gap-4 text-on-surface-variant text-sm font-light">
+<li><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#">Warranty Terms</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#">Sustainability</a></li>
+<li><a class="hover:text-on-surface transition-colors" href="#">Accessibility</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-primary mb-8">Stay Updated</h4>
+<div class="flex border-b border-outline-variant pb-2">
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full placeholder:text-outline/50" placeholder="Email Address" type="email"/>
+<button class="text-primary" data-icon="arrow_forward"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-outline-variant/10 gap-6">
+<p class="text-[10px] text-outline uppercase tracking-widest">© 2024 Horologe International. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-outline hover:text-primary transition-colors text-[10px] uppercase tracking-[0.2em]" href="#">Instagram</a>
+<a class="text-outline hover:text-primary transition-colors text-[10px] uppercase tracking-[0.2em]" href="#">Twitter</a>
+<a class="text-outline hover:text-primary transition-colors text-[10px] uppercase tracking-[0.2em]" href="#">LinkedIn</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1200,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+    });
+</script>
+</body></html>

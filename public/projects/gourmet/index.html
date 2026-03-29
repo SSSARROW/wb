@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KINETIC AI | Neural Monolith Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#131318",
+              "surface-tint": "#cbbeff",
+              "inverse-surface": "#e4e1e9",
+              "primary-fixed-dim": "#cbbeff",
+              "tertiary-fixed-dim": "#ffabf3",
+              "on-secondary-fixed-variant": "#004f54",
+              "on-error-container": "#ffdad6",
+              "surface-container-high": "#2a292f",
+              "background": "#131318",
+              "on-primary": "#340098",
+              "on-surface": "#e4e1e9",
+              "surface-container-lowest": "#0e0e13",
+              "primary": "#cbbeff",
+              "inverse-primary": "#6425ff",
+              "tertiary-fixed": "#ffd7f5",
+              "secondary-fixed": "#7df4ff",
+              "surface-dim": "#131318",
+              "on-primary-fixed": "#1e0060",
+              "on-surface-variant": "#cac3da",
+              "surface-container-highest": "#35343a",
+              "surface-container-low": "#1b1b20",
+              "on-secondary-fixed": "#002022",
+              "outline-variant": "#484457",
+              "inverse-on-surface": "#303036",
+              "surface-bright": "#39383e",
+              "error-container": "#93000a",
+              "on-secondary": "#00363a",
+              "on-primary-container": "#d2c6ff",
+              "on-background": "#e4e1e9",
+              "error": "#ffb4ab",
+              "primary-fixed": "#e7deff",
+              "surface-container": "#1f1f25",
+              "on-tertiary-container": "#ffb6f3",
+              "outline": "#938ea3",
+              "on-primary-fixed-variant": "#4c00d3",
+              "secondary-container": "#00eefc",
+              "secondary": "#d3fbff",
+              "on-tertiary-fixed-variant": "#810081",
+              "on-secondary-container": "#00686f",
+              "secondary-fixed-dim": "#00dbe9",
+              "primary-container": "#5d00ff",
+              "on-error": "#690005",
+              "on-tertiary": "#5b005b",
+              "tertiary": "#ffabf3",
+              "tertiary-container": "#9d009d",
+              "on-tertiary-fixed": "#380038",
+              "surface-variant": "#35343a"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Space Grotesk"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .neural-grid {
+            background-image: radial-gradient(circle at 2px 2px, rgba(72, 68, 87, 0.15) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .glass-panel {
+            background: rgba(53, 52, 58, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(72, 68, 87, 0.2);
+        }
+        .glow-primary {
+            box-shadow: 0 0 40px rgba(93, 0, 255, 0.15);
+        }
+        .glow-secondary {
+            box-shadow: 0 0 40px rgba(211, 251, 255, 0.1);
+        }
+        body {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 rounded-none bg-[#1b1b20]/60 backdrop-blur-xl shadow-[0_0_40px_rgba(93,0,255,0.1)]">
+<div class="flex justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
+<div class="text-xl font-black tracking-tighter text-[#cbbeff]">KINETIC AI</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.2em] text-[0.6875rem] font-bold text-[#484457] hover:text-[#d3fbff] transition-colors duration-300" href="#">SERVICES</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.2em] text-[0.6875rem] font-bold text-[#484457] hover:text-[#d3fbff] transition-colors duration-300" href="#">PROCESS</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.2em] text-[0.6875rem] font-bold text-[#484457] hover:text-[#d3fbff] transition-colors duration-300" href="#">CASE STUDIES</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.2em] text-[0.6875rem] font-bold text-[#484457] hover:text-[#d3fbff] transition-colors duration-300" href="#">RESOURCES</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-['Space_Grotesk'] uppercase tracking-[0.2em] text-[0.6875rem] font-bold hover:brightness-110 active:scale-95 transition-all duration-150">
+                INITIALIZE_CORE
+            </button>
+</div>
+</nav>
+<main class="relative overflow-hidden pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center px-12 neural-grid">
+<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none" data-aos="zoom-out" data-aos-duration="2000">
+<div class="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-primary-container/10 blur-[120px]"></div>
+<div class="absolute bottom-[10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-secondary/5 blur-[100px]"></div>
+</div>
+<div class="relative z-10 w-full max-w-[1920px] mx-auto grid grid-cols-12 gap-8">
+<div class="col-span-12 lg:col-span-8" data-aos="fade-up" data-aos-delay="400">
+<div class="flex items-center gap-4 mb-8">
+<span class="w-12 h-[1px] bg-secondary"></span>
+<span class="text-[0.6875rem] tracking-[0.3em] uppercase text-secondary font-bold">Protocol v4.0.1</span>
+</div>
+<h1 class="text-[clamp(3.5rem,10vw,8rem)] font-black leading-[0.9] tracking-tighter mb-10 text-on-surface">
+                        NEURAL<br/>
+<span class="text-transparent stroke-on-surface" style="-webkit-text-stroke: 1px #e4e1e9;">MONOLITH</span><br/>
+                        SYSTEMS
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-2xl mb-12 font-light leading-relaxed">
+                        Architecting the next intelligence. We build high-precision digital monoliths for enterprise scale through adaptive AI and neural logic.
+                    </p>
+<div class="flex flex-wrap gap-6">
+<button class="px-10 py-5 bg-gradient-to-r from-primary-container to-inverse-primary text-on-primary-container font-bold text-[0.6875rem] tracking-widest uppercase glow-primary">
+                            START_DEPLOYMENT
+                        </button>
+<button class="px-10 py-5 border border-outline-variant/50 text-secondary font-bold text-[0.6875rem] tracking-widest uppercase hover:bg-secondary/5 transition-all">
+                            VIEW_ARCHIVE
+                        </button>
+</div>
+</div>
+<div class="hidden lg:col-span-4 lg:flex items-center justify-center" data-aos="fade-left" data-aos-delay="600">
+<div class="w-full aspect-square glass-panel p-8 relative">
+<div class="absolute top-0 right-0 p-4 font-mono text-[10px] text-outline opacity-50 uppercase tracking-tighter">
+                            System_Status: Operational<br/>
+                            Nodes: 4,092<br/>
+                            Latency: 0.002ms
+                        </div>
+<div class="w-full h-full border border-outline-variant/20 flex items-center justify-center overflow-hidden">
+<div class="w-48 h-48 border-2 border-primary/20 rotate-45 flex items-center justify-center">
+<div class="w-32 h-32 border border-secondary/40 -rotate-45 flex items-center justify-center">
+<div class="w-16 h-16 bg-primary-container shadow-[0_0_30px_#5d00ff]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section (Bento Grid) -->
+<section class="py-32 px-12 bg-surface-container-low overflow-hidden">
+<div class="max-w-[1920px] mx-auto">
+<div class="flex justify-between items-end mb-20" data-aos="fade-up">
+<div>
+<h2 class="text-5xl font-black tracking-tighter mb-4 text-on-surface">CORE_MODULES</h2>
+<p class="text-outline text-[0.6875rem] tracking-[0.2em] uppercase">Specialized Intelligence Services</p>
+</div>
+<div class="hidden md:block text-right text-outline-variant text-[0.6875rem] tracking-widest leading-relaxed">
+                        01 / NEURAL ARCHITECTURE<br/>
+                        02 / INTERFACE DESIGN<br/>
+                        03 / MOBILE SYSTEMS
+                    </div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- AI Service -->
+<div class="col-span-12 lg:col-span-7 group relative glass-panel p-12 hover:bg-surface-container-high transition-all duration-500 overflow-hidden" data-aos="fade-right">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary text-4xl mb-8">psychology</span>
+<h3 class="text-3xl font-bold mb-6 tracking-tight">AI &amp; NEURAL NETWORKS</h3>
+<p class="text-on-surface-variant mb-10 max-w-md leading-relaxed">
+                                Custom LLM integration, predictive modeling, and autonomous agent frameworks designed for high-concurrency enterprise environments.
+                            </p>
+<div class="flex gap-4">
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] text-primary font-bold tracking-tighter border border-primary/10 uppercase">Deep_Learning</span>
+<span class="px-3 py-1 bg-surface-container-highest text-[10px] text-primary font-bold tracking-tighter border border-primary/10 uppercase">NLP_Engines</span>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 w-64 h-64 opacity-10 group-hover:opacity-20 transition-opacity translate-x-12 translate-y-12">
+<span class="material-symbols-outlined text-[20rem] text-secondary" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+</div>
+<!-- Web Service -->
+<div class="col-span-12 lg:col-span-5 glass-panel p-12 hover:glow-secondary transition-all group" data-aos="fade-left">
+<span class="material-symbols-outlined text-primary text-4xl mb-8">language</span>
+<h3 class="text-3xl font-bold mb-6 tracking-tight">WEB_INTERFACE</h3>
+<p class="text-on-surface-variant mb-10 leading-relaxed">
+                            Ultra-performance web architectures leveraging Next.js and custom GLSL shaders for data visualization.
+                        </p>
+<a class="inline-flex items-center gap-2 text-secondary font-bold text-[0.6875rem] tracking-widest uppercase hover:translate-x-2 transition-transform" href="#">
+                            VIEW_SPECIFICATIONS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Mobile Service -->
+<div class="col-span-12 lg:col-span-4 glass-panel p-12 hover:glow-primary transition-all" data-aos="fade-up" data-aos-delay="100">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-8">smartphone</span>
+<h3 class="text-2xl font-bold mb-4 tracking-tight">MOBILE_FLUX</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                            Native-grade performance for iOS and Android built on cross-platform core engines.
+                        </p>
+</div>
+<!-- Data Visualization -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-highest p-12 flex items-center justify-between group" data-aos="fade-up" data-aos-delay="200">
+<div class="max-w-md">
+<h3 class="text-2xl font-bold mb-4 tracking-tight">REALTIME_ANALYTICS</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                Integrated telemetry dashboards that turn raw neural signals into actionable strategic assets.
+                            </p>
+</div>
+<div class="hidden md:flex gap-2 items-end h-32">
+<div class="w-4 bg-primary-container h-1/2 group-hover:h-3/4 transition-all"></div>
+<div class="w-4 bg-secondary h-1/3 group-hover:h-2/3 transition-all"></div>
+<div class="w-4 bg-primary-container h-full group-hover:h-1/2 transition-all"></div>
+<div class="w-4 bg-secondary h-2/3 group-hover:h-full transition-all"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 px-12 relative overflow-hidden">
+<div class="max-w-[1920px] mx-auto relative z-10">
+<div class="text-center mb-24" data-aos="fade-up">
+<h2 class="text-5xl font-black tracking-tighter mb-4">THE_PROCESS</h2>
+<p class="text-secondary text-[0.6875rem] tracking-[0.4em] uppercase font-bold">From Signal to Structure</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-1">
+<div class="p-10 border border-outline-variant/20 hover:bg-surface-container-low transition-colors group" data-aos="fade-up" data-aos-delay="100">
+<div class="text-[0.6875rem] font-black text-outline mb-10">01</div>
+<h4 class="text-xl font-bold mb-4 group-hover:text-secondary transition-colors uppercase">Ingestion</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Defining parameters and harvesting data requirements for core system architecture.</p>
+</div>
+<div class="p-10 border border-outline-variant/20 hover:bg-surface-container-low transition-colors group" data-aos="fade-up" data-aos-delay="200">
+<div class="text-[0.6875rem] font-black text-outline mb-10">02</div>
+<h4 class="text-xl font-bold mb-4 group-hover:text-secondary transition-colors uppercase">Synthesis</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Neural mapping and algorithmic drafting of the solution monolith.</p>
+</div>
+<div class="p-10 border border-outline-variant/20 hover:bg-surface-container-low transition-colors group" data-aos="fade-up" data-aos-delay="300">
+<div class="text-[0.6875rem] font-black text-outline mb-10">03</div>
+<h4 class="text-xl font-bold mb-4 group-hover:text-secondary transition-colors uppercase">Hardening</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Optimization of the neural weight and stress testing under production loads.</p>
+</div>
+<div class="p-10 border border-outline-variant/20 hover:bg-surface-container-low transition-colors group" data-aos="fade-up" data-aos-delay="400">
+<div class="text-[0.6875rem] font-black text-outline mb-10">04</div>
+<h4 class="text-xl font-bold mb-4 group-hover:text-secondary transition-colors uppercase">Deployment</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">Global scale integration and continuous autonomous monitoring.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 px-12 bg-surface-container-lowest overflow-hidden">
+<div class="max-w-4xl mx-auto glass-panel p-16 glow-primary" data-aos="zoom-in">
+<div class="flex items-center gap-4 mb-12">
+<span class="w-10 h-[1px] bg-primary"></span>
+<h2 class="text-3xl font-black tracking-tighter uppercase">Sync_Request</h2>
+</div>
+<form class="space-y-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="relative">
+<label class="block text-[0.6875rem] uppercase tracking-widest text-on-surface-variant mb-2">Entity_Name</label>
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-on-surface placeholder-on-surface-variant/20 transition-all px-0 py-3" placeholder="Identify yourself..." type="text"/>
+</div>
+<div class="relative">
+<label class="block text-[0.6875rem] uppercase tracking-widest text-on-surface-variant mb-2">Channel_Protocol</label>
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-on-surface placeholder-on-surface-variant/20 transition-all px-0 py-3" placeholder="your@nexus.com" type="email"/>
+</div>
+</div>
+<div class="relative">
+<label class="block text-[0.6875rem] uppercase tracking-widest text-on-surface-variant mb-2">Message_Packet</label>
+<textarea class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-outline-variant focus:border-secondary focus:ring-0 text-on-surface placeholder-on-surface-variant/20 transition-all px-0 py-3" placeholder="Describe the monolith you wish to build..." rows="4"></textarea>
+</div>
+<button class="w-full py-6 bg-primary-container text-on-primary-container font-black text-[0.6875rem] tracking-[0.4em] uppercase hover:brightness-110 transition-all active:scale-[0.98]">
+                        TRANSMIT_DATA
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#484457]/20 bg-[#131318] overflow-hidden">
+<div class="grid grid-cols-4 gap-20 px-12 py-24 w-full max-w-[1920px] mx-auto">
+<div class="col-span-4 lg:col-span-1" data-aos="fade-up">
+<div class="text-lg font-bold text-[#cbbeff] mb-4">KINETIC AI</div>
+<p class="text-[#484457] font-['Space_Grotesk'] text-[0.6875rem] tracking-widest leading-relaxed">
+                    BEYOND THE SINGULARITY. WE ARCHITECT THE INFRASTRUCTURE OF THE FUTURE.
+                </p>
+</div>
+<div class="col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="100">
+<h5 class="font-['Space_Grotesk'] text-[0.6875rem] tracking-widest uppercase text-[#cbbeff] mb-6">PROTOCOLS</h5>
+<ul class="space-y-4">
+<li><a class="font-['Space_Grotesk'] text-[0.6875rem] tracking-widest uppercase text-[#484457] hover:text-[#cbbeff] transition-all hover:tracking-[0.05rem]" href="#">NEURAL_NETWORKS</a></li>
+<li><a class="font-['Space_Grotesk'] text-[0.6875rem] tracking-widest uppercase text-[#484457] hover:text-[#cbbeff] transition-all hover:tracking-[0.05rem]" href="#">QUANTUM_LOGIC</a></li>
+<li><a class="font-['Space_Grotesk'] text-[0.6875rem] tracking-widest uppercase text-[#484457] hover:text-[#cbbeff] transition-all hover:tracking-[0.05rem]" href="#">SWARM_INTELLIGENCE</a></li>
+</ul>
+</div>
+<div class="col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="200">
+<h5 class="font-['Space_Grotesk'] text-[0.6875rem] tracking-widest uppercase text-[#cbbeff] mb-6">RESOURCES</h5>
+<ul class="space-y-4">
+<li><a class="font-['Space_Grotesk'] text-[0.6875rem] tracking-widest uppercase text-[#484457] hover:text-[#cbbeff] transition-all hover:tracking-[0.05rem]" href="#">ETHICS_PROTOCOL</a></li>
+<li><a class="font-['Space_Grotesk'] text-[0.6875rem] tracking-widest uppercase text-[#484457] hover:text-[#cbbeff] transition-all hover:tracking-[0.05rem]" href="#">DOCUMENTATION</a></li>
+<li><a class="font-['Space_Grotesk'] text-[0.6875rem] tracking-widest uppercase text-[#484457] hover:text-[#cbbeff] transition-all hover:tracking-[0.05rem]" href="#">API_ACCESS</a></li>
+</ul>
+</div>
+<div class="col-span-4 lg:col-span-1" data-aos="fade-up" data-aos-delay="300">
+<h5 class="font-['Space_Grotesk'] text-[0.6875rem] tracking-widest uppercase text-[#cbbeff] mb-6">LEGAL</h5>
+<p class="text-[#484457] font-['Space_Grotesk'] text-[0.6875rem] tracking-widest uppercase">
+                    ©2024 THE KINETIC SINGULARITY. ALL RIGHTS RESERVED.
+                </p>
+</div>
+</div>
+</footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+    });
+</script>
+</body></html>

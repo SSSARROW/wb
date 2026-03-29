@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background": "#131313",
+              "surface-variant": "#353534",
+              "outline": "#a18c8d",
+              "surface-dim": "#131313",
+              "secondary-fixed-dim": "#e9c349",
+              "primary-fixed-dim": "#ffb2b8",
+              "on-error-container": "#ffdad6",
+              "on-tertiary": "#33302b",
+              "on-secondary-fixed": "#241a00",
+              "on-secondary-fixed-variant": "#574500",
+              "on-tertiary-fixed-variant": "#4a4641",
+              "tertiary-container": "#282520",
+              "tertiary-fixed": "#e8e1da",
+              "surface": "#131313",
+              "on-tertiary-container": "#918c85",
+              "tertiary-fixed-dim": "#ccc6be",
+              "inverse-on-surface": "#313030",
+              "surface-container-highest": "#353534",
+              "inverse-surface": "#e5e2e1",
+              "error-container": "#93000a",
+              "on-primary-fixed": "#3d0410",
+              "surface-container-lowest": "#0e0e0e",
+              "surface-container-low": "#1c1b1b",
+              "on-surface": "#e5e2e1",
+              "outline-variant": "#534344",
+              "secondary": "#e9c349",
+              "secondary-container": "#af8d11",
+              "on-background": "#e5e2e1",
+              "surface-container": "#201f1f",
+              "primary-container": "#4b0f1a",
+              "on-error": "#690005",
+              "on-secondary-container": "#342800",
+              "on-primary-container": "#ca747d",
+              "tertiary": "#ccc6be",
+              "primary": "#ffb2b8",
+              "error": "#ffb4ab",
+              "primary-fixed": "#ffdadb",
+              "surface-container-high": "#2a2a2a",
+              "surface-bright": "#3a3939",
+              "on-surface-variant": "#d9c1c2",
+              "inverse-primary": "#934750",
+              "on-secondary": "#3c2f00",
+              "surface-tint": "#ffb2b8",
+              "secondary-fixed": "#ffe088",
+              "on-tertiary-fixed": "#1e1b17",
+              "on-primary": "#591a24",
+              "on-primary-fixed-variant": "#763039"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 100, 'GRAD' 0, 'opsz' 24;
+            color: #e9c349;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Manrope', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Noto Serif', serif;
+        }
+        [data-aos] {
+            pointer-events: none;
+        }
+        .aos-animate {
+            pointer-events: auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body class="bg-background text-on-background antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-md" data-aos="fade-down" data-aos-duration="1200">
+<nav class="flex justify-between items-center w-full px-6 md:px-12 py-6">
+<div class="text-2xl font-serif tracking-widest text-[#e9c349] uppercase">The Cinematic Epicurean</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#e9c349] font-bold border-b border-[#e9c349]/40 pb-1 font-body text-sm uppercase tracking-widest" href="#">Home</a>
+<a class="text-[#e5e2e1] hover:text-[#e9c349] transition-colors duration-300 font-body text-sm uppercase tracking-widest" href="#">Menu</a>
+<a class="text-[#e5e2e1] hover:text-[#e9c349] transition-colors duration-300 font-body text-sm uppercase tracking-widest" href="#">Reservations</a>
+<a class="text-[#e5e2e1] hover:text-[#e9c349] transition-colors duration-300 font-body text-sm uppercase tracking-widest" href="#">Gallery</a>
+<a class="text-[#e5e2e1] hover:text-[#e9c349] transition-colors duration-300 font-body text-sm uppercase tracking-widest" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 font-body font-bold text-xs uppercase tracking-widest transition-all duration-200 hover:bg-primary-container hover:text-on-primary-container active:scale-95">
+                Book Now
+            </button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0" data-aos="zoom-out" data-aos-duration="2000">
+<img alt="Signature Dish" class="w-full h-full object-cover" data-alt="Close-up of a molecular gastronomy seafood dish with vibrant edible flowers and foam, served on dark slate with dramatic atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRPw6AMzpFhcYoVNSi2PfKenK-dqdnPXnZ2hP3k2n9cC2vIZyA-SIdx8sCIZHlbEQFOfqhiiCwSbAf2ogt5k8KhxnVUNOfC_EHYMKy2_Modw2pHCAv1ta80fkXHoAsJP8KrN75cWgBfx3FUIiTC-RvHJRmR-IOF6fPu55dvpf3DmUVnTnRe7l6UfYGt-PI2MbtuIUJnfyZ1UyhpRluZkncObfBF2cn6M9M8dgQEEdoW6xsQWulFJ1VsvLSpSd4PWJ-_5s_gTi-D94F"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl" data-aos="fade-up" data-aos-delay="300">
+<span class="block font-body text-secondary text-sm uppercase tracking-[0.4em] mb-6">Established MMXXIV</span>
+<h1 class="text-5xl md:text-8xl font-serif text-on-background mb-8 leading-tight tracking-[0.02em]">
+                    The Art of <br/>
+<span class="italic text-primary-fixed-dim">Sensory Dining</span>
+</h1>
+<p class="font-body text-on-surface-variant max-w-xl mx-auto mb-12 text-sm md:text-base leading-relaxed tracking-wide">
+                    Experience a curated symphony of flavor, where cinematic atmosphere meets Michelin-caliber culinary craftsmanship.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-4 font-body font-extrabold text-sm uppercase tracking-[0.2em] transition-all hover:bg-primary-container">
+                        Book Now
+                    </button>
+<button class="border border-secondary/20 text-secondary px-10 py-4 font-body font-extrabold text-sm uppercase tracking-[0.2em] hover:bg-secondary/10 transition-all">
+                        View Menu
+                    </button>
+</div>
+</div>
+</section>
+<!-- The Experience (About Us) -->
+<section class="py-40 px-6 md:px-24 bg-surface" overflow-hidden>
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-20 items-center">
+<div class="md:col-span-5 order-2 md:order-1" data-aos="fade-right">
+<span class="font-body text-secondary text-xs uppercase tracking-[0.5em] mb-4 block">Our Philosophy</span>
+<h2 class="text-4xl md:text-6xl font-serif text-on-background mb-10 leading-snug">The Experience</h2>
+<div class="space-y-8 font-body text-on-surface-variant leading-loose text-sm tracking-wide">
+<p>
+                            At <span class="text-secondary">The Cinematic Epicurean</span>, dining is not merely a meal—it is a performance. We believe that every ingredient tells a story, and every plate is a canvas.
+                        </p>
+<p>
+                            Inspired by the dramatic lighting of noir cinema and the meticulous precision of fine art, our dining room provides a hushed, candle-lit sanctuary for those who seek the extraordinary.
+                        </p>
+<div class="pt-6 border-t border-secondary/10 w-24"></div>
+<p class="italic text-tertiary-fixed font-serif text-lg">
+                            "A masterclass in culinary narrative."
+                        </p>
+</div>
+</div>
+<div class="md:col-span-7 order-1 md:order-2" data-aos="fade-left">
+<div class="relative aspect-[4/5] md:aspect-video bg-surface-container-low group overflow-hidden">
+<img alt="The Dining Room" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000" data-alt="Interior of a luxury dark-themed restaurant with gold accents, leather seating, and soft spotlighting on elegantly set tables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2XjVelGqqKOcBDJOtJ6y_fMQi_TwBRvVGp0ZYU0-jfzho01YUlyBV8lFDYm-sz9Kwf5Y_RQ9gMFe4JCjVYC-UwcpCf9hC00DcvMPDpsYGZHZJ-XJIXgdADgzsBiRxP1o3MbyHCFSdM1I6pIVaZlfLbdXUKd1iLhsxSAJRMFZtUGbu5x6EDzLpMW8rJH3msawT18ekmJXuky7VDRWy1CKF7nwGcGNnW2kYaf5RmVmaeg69J5fY6WnJE2Yf29PKda8ibJJlPvF13qJu"/>
+<div class="absolute -bottom-8 -left-8 w-48 h-48 bg-primary-container/20 backdrop-blur-3xl hidden md:block"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tonight's Signature (Featured Dish) -->
+<section class="py-40 bg-surface-container-lowest overflow-hidden">
+<div class="max-w-screen-2xl mx-auto px-6">
+<div class="flex flex-col items-center text-center mb-24" data-aos="fade-up">
+<h2 class="text-4xl md:text-7xl font-serif mb-6">Tonight's Signature</h2>
+<div class="h-px bg-secondary w-20 md:w-32 opacity-40 mb-8"></div>
+<p class="font-body text-on-surface-variant max-w-2xl text-xs uppercase tracking-[0.3em]">Exclusively prepared by Chef de Cuisine</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden">
+<div class="relative aspect-square" data-aos="fade-right">
+<img alt="Wagyu Reserve" class="w-full h-full object-cover" data-alt="High-end presentation of A5 Wagyu beef with black truffle shavings, gold leaf, and a dark rich demi-glace on a textured ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQQJwnoWOCqQ86zxqR5LIt47miu_lj5ViASPYKx4JMFfM5Z1-nHyMUsyetfoUv5xE61CZmhpst8_-2n6ub0RPFSLboRG3DPI3WE0bBHzsrgxVrF7v5VxT4wGcAgGBx1nmPn3IHYxJYpXtQXlM8-R_dRwpxT08eAVbJpcE8kgigwmo-FaPYO_hLAwGdNaeBKq8pcgZhc3thB90Mk2kBhtL5ETWWaV7DCXFh4Utz9degnAMVbi-MzXisTGRlgN2h5fqHtLBQeq9Lar0W"/>
+</div>
+<div class="bg-surface-container-low p-12 md:p-24 flex flex-col justify-center" data-aos="fade-left">
+<h3 class="text-3xl md:text-5xl font-serif mb-6 text-primary-fixed-dim">Wagyu Reserve No. 9</h3>
+<p class="font-body text-on-surface mb-10 leading-relaxed text-sm md:text-base">
+                            A5 Miyazaki Wagyu, slow-seared over binchotan charcoal. Served with aged balsamic-infused shallots, shaved Perigord truffles, and a reduction of 2015 Bordeaux.
+                        </p>
+<div class="flex items-center space-x-4 mb-12">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<span class="font-body text-xs uppercase tracking-widest text-secondary">Award Winning Selection</span>
+</div>
+<button class="w-fit border border-secondary text-secondary px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-secondary hover:text-on-secondary transition-all">
+                            Reserve This Pairing
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-40 px-6 bg-surface flex flex-col items-center justify-center text-center" data-aos="zoom-in">
+<div class="max-w-3xl">
+<h2 class="text-4xl md:text-6xl font-serif mb-8 italic">Secure your table at the epicenter of taste.</h2>
+<div class="h-px bg-secondary w-1/4 mx-auto mb-12 opacity-30"></div>
+<p class="font-body text-on-surface-variant mb-12 text-sm tracking-widest uppercase">Limited availability for the autumn tasting menu.</p>
+<button class="bg-primary text-on-primary px-16 py-5 font-body font-black text-sm uppercase tracking-[0.3em] hover:bg-primary-container transition-all">
+                    Book Now
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full py-20 px-10">
+<div class="flex flex-col items-center space-y-8 w-full">
+<div class="text-lg font-serif text-[#e9c349] uppercase tracking-widest">The Cinematic Epicurean</div>
+<div class="w-full max-w-md h-px bg-[#e9c349]/20"></div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-[#a18c8d] hover:text-[#e9c349] transition-colors font-body text-xs uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-[#a18c8d] hover:text-[#e9c349] transition-colors font-body text-xs uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-[#a18c8d] hover:text-[#e9c349] transition-colors font-body text-xs uppercase tracking-widest" href="#">Press Kit</a>
+<a class="text-[#a18c8d] hover:text-[#e9c349] transition-colors font-body text-xs uppercase tracking-widest" href="#">Careers</a>
+</div>
+<div class="text-[#a18c8d] font-body text-[10px] uppercase tracking-[0.3em] mt-8 opacity-60">
+                © 2024 The Cinematic Epicurean. All rights reserved.
+            </div>
+</div>
+</footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+        easing: 'ease-out-cubic'
+    });
+</script>
+</body></html>
