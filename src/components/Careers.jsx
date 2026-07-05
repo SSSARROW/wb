@@ -103,9 +103,9 @@ export default function Careers() {
                             visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
                         }}
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-600 text-transparent bg-clip-text">
-                            Careers at SRSM3dia
-                        </h2>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-600 text-transparent bg-clip-text">
+                            Careers at SenXDev
+                        </h1>
                     </motion.div>
                     <motion.div
                         initial="hidden"

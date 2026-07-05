@@ -3,6 +3,14 @@ import { motion } from "framer-motion"
 import { useParams, useNavigate } from "react-router-dom"  // Already imported
 import { Briefcase, Send } from "lucide-react"
 import { jobOpenings } from "../../data/jobs"  // Update the import path
+import Seo from "../../components/Seo"
+
+const EMPLOYMENT_TYPE_MAP = {
+    "Full-time": "FULL_TIME",
+    "Part-time": "PART_TIME",
+    "Contract": "CONTRACTOR",
+    "Internship": "INTERN",
+}
 
 export default function JobPage() {
     const { job: jobSlug } = useParams()
@@ -16,6 +24,24 @@ export default function JobPage() {
     }, [job, navigate])
 
     if (!job) return <div>Loading...</div>
+
+    const jobPostingJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        title: job.title,
+        description: job.fullDescription || job.description,
+        employmentType: EMPLOYMENT_TYPE_MAP[job.type] || "OTHER",
+        hiringOrganization: {
+            "@type": "Organization",
+            name: "SenXDev",
+            sameAs: "https://senxdev.com",
+        },
+        jobLocationType: job.location === "Remote" ? "TELECOMMUTE" : undefined,
+        applicantLocationRequirements: job.location === "Remote" ? {
+            "@type": "Country",
+            name: "Anywhere",
+        } : undefined,
+    }
 
     // Render helper: split into paragraphs on double-newline and preserve single newlines as <br/>
     const renderDescription = (text) => {
@@ -39,6 +65,12 @@ export default function JobPage() {
 
     return (
         <section className="py-24 min-h-screen bg-gradient-to-br from-black via-gray-900 to-emerald-950">
+            <Seo
+                title={`${job.title} | Careers at SenXDev`}
+                description={job.description}
+                path={`/careers/${job.slug}`}
+                jsonLd={jobPostingJsonLd}
+            />
             <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-24 max-w-4xl">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -55,7 +87,6 @@ export default function JobPage() {
                         <span>{job.type}</span>
                     </div>
                     <div>
-                        <h1 className="text-3xl font-bold">{job.title}</h1>
                         {/* Use renderer for better formatting */}
                         {renderDescription(job.fullDescription ? job.fullDescription : job.description)}
                     </div>

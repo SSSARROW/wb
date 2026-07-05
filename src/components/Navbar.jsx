@@ -69,7 +69,7 @@ const Navbar = () => {
         >
           <img
             src={logo} // Use the imported logo
-            alt="Logo"
+            alt="SenXDev logo"
             className="w-36 md:w-48 hover:scale-110 transition-transform duration-300"
           />
         </motion.a>

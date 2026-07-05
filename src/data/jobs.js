@@ -1,3 +1,4 @@
+// NOTE: when adding/removing a job, also update its URL in public/sitemap.xml
 export const jobOpenings = [
   {
     title: "Lead Generator",
