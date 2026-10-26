@@ -4,10 +4,11 @@
 //   - one static page per service (/services/<slug>) and the services hub
 //   - one static page per job (/careers/<slug>) with JobPosting data
 //   - sitemap.xml and llms.txt
+//   - dist/: the deployable site (what Vercel serves)
 // Safe to run repeatedly: content goes between <!-- @name --> ... <!-- /@name --> markers.
 // Usage: node scripts/build.mjs
 
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, rm, cp } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SERVICES, PROCESS, REASONS, PROJECTS, JOBS, INDUSTRIES, CONTACT } from "../assets/js/data.js";
@@ -452,4 +453,12 @@ for (const s of SERVICE_PAGES) await write(`services/${s.slug}/index.html`, serv
 await buildSitemap();
 await buildLlms();
 await buildManifest();
+
+// Copy only what the public site needs into dist/ (no build scripts or source content).
+const PUBLIC = ["index.html", "404.html", "work.html", "assets", "careers", "services", "projects", "sitemap.xml", "robots.txt", "llms.txt", "site.webmanifest"];
+await rm(join(ROOT, "dist"), { recursive: true, force: true });
+for (const p of PUBLIC) await cp(join(ROOT, p), join(ROOT, "dist", p), { recursive: true });
+// Social previews and structured data reference /favicon.jpg at the site root.
+await cp(join(ROOT, "assets/img/favicon.jpg"), join(ROOT, "dist/favicon.jpg"));
+console.log("  copied site to dist/");
 console.log("Done.");
