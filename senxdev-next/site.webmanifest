@@ -1,0 +1,16 @@
+{
+  "name": "SenXDev",
+  "short_name": "SenXDev",
+  "description": "Custom software development company",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0c0c",
+  "theme_color": "#0c0c0c",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.jpg",
+      "sizes": "any",
+      "type": "image/jpeg"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# SenXDev
+
+> SenXDev is a custom software development company. We design and build mobile apps, web apps, websites and AI solutions for startups and businesses worldwide (USA, UK, Canada, Australia and more), from our team in Sri Lanka.
+
+Contact: support@senxdev.com · +94 76 358 1264 · WhatsApp https://wa.me/94763581264
+
+## Services
+- [Custom Software Development](https://senxdev.com/services/custom-software-development): Custom software development services for startups and growing businesses: internal tools, business automation and integrations, built by an offshore team.
+- [Mobile App Development](https://senxdev.com/services/mobile-app-development): Mobile app development company building fast iOS and Android apps for startups and businesses worldwide: MVPs, booking apps, ordering apps and customer apps.
+- [Website Development](https://senxdev.com/services/web-development): Website development and web design services: fast, SEO-ready business websites, landing pages and ecommerce websites that turn visitors into enquiries.
+- [Web App Development](https://senxdev.com/services/web-app-development): Web app development services: SaaS platforms, dashboards, booking systems and customer portals that run in any browser, for startups and businesses worldwide.
+- [AI Development & Automation](https://senxdev.com/services/ai-development): AI solutions for business: AI chatbot development, WhatsApp chatbots and AI automation for small businesses and growing teams worldwide.
+- [UI/UX Design](https://senxdev.com/services/ui-ux-design): UI/UX design services: product design, website redesign and design systems for startups and businesses that want clearer, faster products.
+
+## Company
+- [Home](https://senxdev.com/): Tell us what's slowing your business down and see what we'd build.
+- [Work](https://senxdev.com/work): Web and app design portfolio.
+- [Careers](https://senxdev.com/careers): Open roles.

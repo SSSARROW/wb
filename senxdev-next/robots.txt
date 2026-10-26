@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /projects/
+Disallow: /careers/*/apply
+Disallow: /careers/role.html
+
+Sitemap: https://senxdev.com/sitemap.xml
