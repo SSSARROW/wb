@@ -77,6 +77,7 @@ export function footerHTML(active) {
       </ul></div>
       <div><h2 class="foot-h">Company</h2><ul>
         <li><a href="/services">All services</a></li>
+        <li><a href="/ideas">Automation ideas</a></li>
         <li><a href="/work">Work</a></li>
         <li><a href="${h("#process")}">Process</a></li>
         <li><a href="${h("#faq")}">FAQ</a></li>

@@ -12,6 +12,19 @@ Contact: support@senxdev.com · +94 76 358 1264 · WhatsApp https://wa.me/947635
 - [AI Development & Automation](https://www.senxdev.com/services/ai-development): AI solutions for business: AI chatbot development, WhatsApp chatbots and AI automation for small businesses and growing teams worldwide.
 - [UI/UX Design](https://www.senxdev.com/services/ui-ux-design): UI/UX design services: product design, website redesign and design systems for startups and businesses that want clearer, faster products.
 
+## Automation ideas by business type
+- [All business types](https://www.senxdev.com/ideas): Pick your business and see 3 practical automation ideas.
+- [Restaurants & cafes](https://www.senxdev.com/ideas/restaurants-cafes): WhatsApp bookings without the back-and-forth; Instant answers to common questions; A review request after every visit.
+- [Salons & spas](https://www.senxdev.com/ideas/salons-spas): Book appointments straight from Instagram DMs; Appointment reminders with one-tap confirm; Bring regulars back on time.
+- [Clinics](https://www.senxdev.com/ideas/clinics): WhatsApp appointment booking; Reminders and pre-visit forms; Answers to everyday questions.
+- [Real estate agencies](https://www.senxdev.com/ideas/real-estate): Reply to every enquiry in minutes; Book viewings without the phone tag; New listings sent to matching buyers.
+- [Online stores](https://www.senxdev.com/ideas/online-stores): Order updates customers don't have to ask for; Abandoned cart reminders on WhatsApp; A support assistant for common questions.
+- [Retail shops](https://www.senxdev.com/ideas/retail-shops): "Is it in stock?" answered automatically; Low-stock alerts before you run out; A daily sales summary on your phone.
+- [Gyms & fitness studios](https://www.senxdev.com/ideas/gyms-fitness): Follow up every trial sign-up; Class bookings and waitlists on WhatsApp; Check in with members who stop coming.
+- [Agencies & consultants](https://www.senxdev.com/ideas/agencies-consultants): Client onboarding that runs itself; Meeting notes and follow-ups, drafted for you; Monthly reports put together automatically.
+- [Trades & home services](https://www.senxdev.com/ideas/trades-home-services): Collect job details before you quote; Book jobs and send reminders; Friendly invoice reminders.
+- [Coaches & training centres](https://www.senxdev.com/ideas/coaches-education): Answer course questions on Instagram; Automatic student onboarding; Weekly student check-ins.
+
 ## Company
 - [Home](https://www.senxdev.com/): Tell us what's slowing your business down and see what we'd build.
 - [Work](https://www.senxdev.com/work): Web and app design portfolio.

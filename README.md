@@ -71,3 +71,15 @@ When adding or removing a job, also update `sitemap.xml`. Each job needs its own
 - Careers: per-category empty states, "no openings", not-found role page (no silent redirect), Tally loading / load-failure (points to new tab) / submitted, deterministic back links, apply page `noindex`.
 - Portfolio: keyboard + backdrop dismiss (native `<dialog>`), image loading/failed fallback, deep links (`#project-4`), concept banner on demo sites.
 - Site-wide: real anchors instead of timed scrolling, no dead footer links, service rows/footer links prefill the brief, every new-tab action is a real link (pop-up-blocker safe), `<noscript>` contact fallback.
+
+## Automation ideas pages (Instagram "Comment AUTOMATE" funnel)
+
+1. Someone comments **AUTOMATE** on a reel.
+2. SendPulse (or any Instagram DM bot) replies automatically with a link: `https://www.senxdev.com/ideas?name=<their first name>`.
+3. The page greets them by name ("Hey Sara 👋 here are your 3 ideas"), they pick their type of business, and see 3 ideas made for it at `/ideas/<type>`, with a "Walk me through idea #1" booking button and a "reply 'video'" option.
+
+- **Content:** `content/ideas.mjs`, one entry per business type with 3 ideas each (title, summary, 3–5 steps, what it takes off their plate, setup time). Run `npm run build` after editing. The build stops if any text breaks the rules: no percentages, prices, guarantees, case studies, testimonials or claims about past clients.
+- **Name in the link:** read from `?name=` by a tiny inline script, kept on internal links and added to the booking link. If it's missing, or the bot sends its placeholder unfilled, the greeting is simply hidden.
+- **Settings:** `content/site.config.mjs` holds the Cal.com link (`CAL_URL`) and the call length shown on the button (`CALL_MINUTES`).
+- **Search:** these pages hold no personal data, so they're indexed and listed in the sitemap ("AI Automation Ideas for Restaurants & Cafes" and so on).
+- **Code:** `scripts/ideas-pages.mjs` (templates and content checks), `assets/css/ideas.css` (styles, including a one-page print layout for "Save as PDF").

@@ -1,0 +1,289 @@
+/* Automation ideas pages (/ideas, /ideas/<type>). Loaded after site.css, which supplies the
+   shared footer. Brand: black, green accent, Anton headlines, Inter Tight body,
+   no italics anywhere. Mobile-first: most visitors arrive from an Instagram DM. */
+
+body.ideas-page {
+  --bg: #000000;
+  --card: #0b0b0b;
+  --card-2: #141414;
+  --line: #1f1f1f;
+  --line-2: #2d2d2d;
+  --text: #f4f4f1;
+  --muted: #a9a9a3;
+  --dim: #7b7b74;
+  --green: #2be07b;
+  --ink: #000000;
+  --font: "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --display: "Anton", "Arial Narrow", Impact, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+}
+body.ideas-page *, body.ideas-page *::before, body.ideas-page *::after { font-style: normal !important; font-synthesis: none; }
+body.ideas-page .wa { display: none; } /* one clear action on this page: the call */
+
+.plan-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  max-width: 760px; margin: 0 auto; padding: 18px 18px 0;
+  font-size: 13px; color: var(--dim);
+}
+.plan-bar .brand img { height: 24px; width: auto; }
+
+.plan-main { max-width: 760px; margin: 0 auto; padding: 0 18px 24px; }
+
+.plan-hero { padding: 36px 0 26px; }
+.plan-meta { margin: 0 0 14px; font-size: 14px; color: var(--muted); }
+.plan-h1 {
+  margin: 0; font-family: var(--display); font-weight: 400; text-transform: uppercase;
+  font-size: clamp(42px, 12.5vw, 92px); line-height: 0.95; letter-spacing: 0.005em;
+  overflow-wrap: anywhere;
+}
+.plan-h1 span { color: var(--green); }
+
+.label {
+  margin: 0 0 10px; font-family: var(--font); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.09em; text-transform: uppercase; color: var(--green);
+}
+
+.told { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+.told p { margin: 0; font-size: 17px; line-height: 1.55; }
+.told .tools { margin-top: 14px; font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.told .tools b { font-weight: 600; color: var(--text); border: 1px solid var(--line-2); border-radius: 999px; padding: 4px 10px; }
+
+.ideas { margin-top: 12px; }
+.idea { padding: 30px 0 28px; border-bottom: 1px solid var(--line); }
+.idea-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.idea-n { font-family: var(--display); font-size: 54px; line-height: 0.9; color: var(--green); }
+.start-here {
+  background: var(--green); color: var(--ink); border-radius: 999px; padding: 5px 11px;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.idea-title {
+  margin: 0 0 10px; font-family: var(--display); font-weight: 400; text-transform: uppercase;
+  font-size: clamp(28px, 7.4vw, 44px); line-height: 1; letter-spacing: 0.01em;
+}
+.idea-summary { margin: 0 0 22px; font-size: 17px; line-height: 1.5; color: var(--text); }
+
+.plan-steps { list-style: none; margin: 0 0 22px; padding: 0; counter-reset: step; display: grid; gap: 12px; }
+.plan-steps li { counter-increment: step; display: grid; grid-template-columns: 30px 1fr; gap: 12px; font-size: 16px; line-height: 1.5; color: #dcdcd7; }
+.plan-steps li::before {
+  content: counter(step); width: 28px; height: 28px; border-radius: 50%;
+  border: 1.5px solid var(--green); color: var(--green);
+  display: grid; place-items: center; font-size: 13px; font-weight: 700; margin-top: -1px;
+}
+
+.facts { margin: 0; display: grid; gap: 10px; }
+.facts div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.facts dt { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); margin-bottom: 4px; }
+.facts dd { margin: 0; font-size: 16px; line-height: 1.45; }
+
+.plan-cta { padding: 32px 0 8px; }
+.cta-btn {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  min-height: 58px; padding: 14px 20px; border-radius: 16px;
+  background: var(--green); color: var(--ink); text-decoration: none;
+  font-size: 17px; font-weight: 700; line-height: 1.25;
+  transition: transform 0.2s, filter 0.2s;
+}
+.cta-btn:hover { filter: brightness(1.06); }
+.cta-btn:active { transform: scale(0.98); }
+.cta-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
+.cta-alt { margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: var(--muted); text-align: center; }
+
+/* Greeting from the Instagram DM link (?name=...), filled in by a tiny inline script. */
+.hello { margin: 0 0 10px; font-size: 18px; font-weight: 600; color: var(--text); }
+.hello[hidden] { display: none; }
+.back { display: inline-flex; gap: 6px; align-items: center; margin-bottom: 18px; font-size: 14px; color: var(--muted); text-decoration: none; }
+.back:hover { color: var(--text); }
+.plan-lede { margin: 16px 0 0; font-size: 17px; line-height: 1.5; color: var(--muted); max-width: 46ch; }
+
+/* Business picker: "I run ___ and I'm stuck ___". Each answer types itself into
+   its blank (see PICKER in scripts/ideas-pages.mjs), then the 3 ideas appear. */
+.picker-hero { position: relative; isolation: isolate; }
+.picker-hero::before {
+  content: ""; position: absolute; z-index: -1; left: -30%; top: -40px; width: 120%; height: 360px;
+  background: radial-gradient(closest-side, rgba(43, 224, 123, 0.16), transparent 70%);
+  animation: glowDrift 9s ease-in-out infinite alternate; pointer-events: none;
+}
+@keyframes glowDrift { from { transform: translate(-6%, 0) scale(1); } to { transform: translate(14%, 30px) scale(1.15); } }
+.hello:not([hidden]) { animation: tileIn 0.6s cubic-bezier(0.2, 0.7, 0.1, 1) both; }
+@keyframes tileIn { from { opacity: 0; transform: translateY(18px) scale(0.96); } to { opacity: 1; transform: none; } }
+
+.mad-progress { display: none; gap: 4px; margin-bottom: 18px; }
+.js .mad-progress { display: flex; }
+.mad-progress span { width: 28px; height: 5px; border-radius: 3px; background: var(--line-2); transition: background 0.3s; }
+.mad-progress span:first-child,
+[data-step="2"] .mad-progress span:nth-child(2),
+[data-step="3"] .mad-progress span { background: var(--green); }
+
+.mad-line {
+  margin: 0; font-family: var(--display); font-weight: 400; text-transform: uppercase;
+  font-size: clamp(40px, 11vw, 72px); line-height: 1.12; letter-spacing: 0.005em;
+}
+.mad-line[hidden] { display: none; }
+.mad-line + .mad-line { margin-top: 6px; animation: tileIn 0.5s cubic-bezier(0.2, 0.7, 0.1, 1) both; }
+.mad-blank {
+  color: var(--dim); text-decoration: underline 3px var(--line-2); text-underline-offset: 0.1em;
+  text-decoration-skip-ink: none; transition: color 0.2s, text-decoration-color 0.2s;
+}
+.mad-blank.filled { color: var(--green); text-decoration-color: var(--green); }
+/* Blinking cursor while the blank is waiting or typing. */
+.js .mad-blank:not(.filled)::after, .mad-blank.typing::after {
+  content: ""; display: inline-block; width: 0.09em; height: 0.8em; margin-left: 0.08em;
+  background: var(--green); vertical-align: -0.04em; animation: caret 1s steps(1) infinite;
+}
+@keyframes caret { 50% { opacity: 0; } }
+
+.mad-step { margin-top: 28px; }
+.mad-step[hidden] { display: none; }
+.mad-step:not(.mad-opts) { animation: tileIn 0.45s cubic-bezier(0.2, 0.7, 0.1, 1) both; }
+.mad-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.mad-opt, .mad-pain {
+  border: 1.5px solid var(--line-2); border-radius: 999px; background: transparent; color: var(--text);
+  padding: 12px 16px; font: 600 16px/1.2 var(--font); text-decoration: none; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.mad-opt { animation: tileIn 0.5s cubic-bezier(0.2, 0.7, 0.1, 1) both; animation-delay: calc(var(--i) * 40ms + 150ms); }
+.mad-opt.other { color: var(--dim); border-style: dashed; }
+.mad-opt:hover, .mad-pain:hover { background: var(--green); border-color: var(--green); color: var(--ink); }
+.mad-opt:active, .mad-pain:active { transform: scale(0.97); }
+.mad-opt:focus-visible, .mad-pain:focus-visible, .mad-link:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+.mad-pains { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.mad-pain { border-radius: 14px; padding: 16px 18px; text-align: left; font-size: 17px; }
+.mad-pain.other { color: var(--dim); border-style: dashed; }
+.mad-link { margin-top: 14px; border: 0; background: none; padding: 8px 0; font: 500 14px var(--font); color: var(--dim); cursor: pointer; }
+.mad-link:hover { color: var(--text); }
+
+/* "Something else": type your own business or problem. */
+.mad-own-row { display: flex; gap: 8px; margin-top: 12px; }
+.mad-own input {
+  flex: 1; min-width: 0; border: 1.5px solid var(--line-2); border-radius: 14px; background: var(--card);
+  color: var(--text); padding: 15px 16px; font: 500 17px var(--font);
+}
+.mad-own input::placeholder { color: var(--dim); }
+.mad-own input:focus { outline: none; border-color: var(--green); }
+.mad-go {
+  flex-shrink: 0; border: 0; border-radius: 14px; background: var(--green); color: var(--ink);
+  padding: 0 18px; font: 700 16px var(--font); cursor: pointer;
+}
+.mad-go:focus-visible { outline: 3px solid #ffffff; outline-offset: 2px; }
+
+/* Step 3: the ideas in full, numbered in the order shown (the picker moves the
+   one for the visitor's problem to the top). */
+.mad-result { scroll-margin-top: 12px; outline: none; }
+.mad-result .ideas { counter-reset: idea; }
+.mad-result .idea { counter-increment: idea; }
+.mad-result .idea-n::before { content: "#" counter(idea); }
+.mad-result .idea:not(:first-child) .start-here { display: none; }
+.mad-result .idea:last-child { border-bottom: 0; }
+.mad-unlisted { margin-top: 28px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px 20px; }
+.mad-unlisted h2 { margin: 0 0 10px; font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 30px; line-height: 1; }
+.mad-unlisted p { margin: 0; font-size: 16px; line-height: 1.5; color: var(--muted); }
+
+/* Each idea has its own booking button, so a visitor can act on the one they like
+   without scrolling to the end. */
+.idea-book {
+  display: flex; flex-direction: column; align-items: center; gap: 3px; margin-top: 18px;
+  border-radius: 14px; padding: 14px 18px; background: var(--green); color: var(--ink);
+  text-decoration: none; text-align: center; transition: filter 0.2s, transform 0.2s;
+}
+.idea-book span { font-weight: 700; font-size: 16px; }
+.idea-book small { font-size: 13px; font-weight: 500; opacity: 0.75; }
+.idea-book:hover { filter: brightness(1.06); }
+.idea-book:active { transform: scale(0.98); }
+.idea-book:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
+.setup-note { margin: 18px 0 0; font-size: 13px; line-height: 1.5; color: var(--dim); }
+
+/* Booking box under the ideas (both /ideas and the type pages). */
+.mad-book h2 { margin: 0 0 10px; font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(32px, 8vw, 44px); line-height: 1; }
+.mad-book > p:not(.cta-alt) { margin: 0 0 20px; font-size: 17px; line-height: 1.5; color: var(--muted); max-width: 52ch; }
+.mad-book[hidden], .mad-again[hidden] { display: none; }
+.mad-again { margin: 4px 0 0; text-align: center; }
+
+.other-box { margin-top: 28px; background: var(--card); border: 1px dashed var(--line-2); border-radius: 18px; padding: 22px 20px; scroll-margin-top: 16px; }
+.js .other-box { display: none; } /* the picker's own "something else" replaces it */
+.other-box h2 { margin: 0 0 8px; font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 30px; line-height: 1; }
+.other-box p { margin: 0 0 18px; font-size: 16px; line-height: 1.5; color: var(--muted); }
+
+
+/* Ideas slide in as they scroll into view (no JavaScript; browsers without support just show them). */
+@supports (animation-timeline: view()) {
+  .idea { animation: ideaIn linear both; animation-timeline: view(); animation-range: entry 0% entry 45%; }
+  .plan-steps li { animation: stepIn linear both; animation-timeline: view(); animation-range: entry 10% entry 70%; }
+}
+@keyframes ideaIn { from { opacity: 0; transform: translateY(40px); } }
+@keyframes stepIn { from { opacity: 0; transform: translateX(-14px); } }
+.told { animation: tileIn 0.7s cubic-bezier(0.2, 0.7, 0.1, 1) 0.15s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mad-opt, .mad-step, .mad-line, .hello, .told, .idea, .plan-steps li { animation: none !important; opacity: 1 !important; }
+  .picker-hero::before { animation: none; }
+}
+
+/* Switch business type */
+.switch { padding: 28px 0 4px; }
+.switch p { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
+.type-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.type-chips a { border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 14px; font-size: 14px; color: var(--text); text-decoration: none; }
+.type-chips a:hover { border-color: var(--green); }
+
+@media (min-width: 720px) {
+  .mad-pains { max-width: 520px; }
+  .other-box { padding: 28px; }
+}
+
+.print-only { display: none; }
+
+/* The shared footer, in this page's type. */
+body.ideas-page .site-footer { margin-top: 56px; }
+body.ideas-page .foot-cta .display, body.ideas-page .foot-word {
+  font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.01em;
+}
+
+@media (min-width: 720px) {
+  .plan-bar { padding-top: 26px; }
+  .plan-hero { padding: 56px 0 34px; }
+  .told { padding: 26px 28px; }
+  .told p { font-size: 18px; }
+  .facts { grid-template-columns: 1fr 1fr; }
+  .cta-btn { display: inline-flex; min-width: 380px; }
+  .plan-cta, .cta-alt { text-align: left; }
+}
+
+/* "Save as PDF": a clean one-page document, white background, black text, no buttons. */
+@media print {
+  @page { size: A4; margin: 12mm 14mm; }
+  body.ideas-page {
+    --text: #000; --muted: #333; --dim: #444; --green: #000; --line: #bbb; --card: transparent;
+    background: #fff !important; color: #000 !important; font-size: 9.5pt;
+  }
+  .plan-bar, .plan-cta, .idea-book, .setup-note, .site-footer, .wa, .skip, .progress-line, .back, .switch, .hello { display: none !important; }
+  .plan-main { max-width: none; padding: 0; }
+  .plan-hero { padding: 0 0 8pt; }
+  .plan-meta { font-size: 9pt; margin-bottom: 4pt; }
+  .plan-h1 { font-size: 24pt; line-height: 1; }
+  .label { font-size: 7.5pt; margin-bottom: 3pt; }
+  .told { border: 1px solid #000; border-radius: 6pt; padding: 7pt 9pt; }
+  .told p { font-size: 9.5pt; line-height: 1.4; }
+  .told .tools { margin-top: 4pt; font-size: 8.5pt; }
+  .told .tools b { padding: 0 5pt; border-color: #888; }
+  .ideas { margin-top: 2pt; }
+  .idea { padding: 8pt 0 7pt; border-bottom: 1px solid #bbb; break-inside: avoid; }
+  .idea:last-child { border-bottom: 0; }
+  .idea-head { margin-bottom: 2pt; gap: 6pt; }
+  .idea-n { font-size: 16pt; }
+  .start-here { background: none; border: 1px solid #000; color: #000; font-size: 6.5pt; padding: 1pt 5pt; }
+  .idea-title { font-size: 13pt; margin-bottom: 3pt; }
+  .idea-summary { font-size: 9.5pt; margin-bottom: 5pt; }
+  .plan-steps { gap: 2pt; margin-bottom: 5pt; }
+  .plan-steps li { font-size: 9pt; line-height: 1.35; grid-template-columns: 14pt 1fr; gap: 4pt; color: #000; }
+  .plan-steps li::before { width: 11pt; height: 11pt; font-size: 6.5pt; border-width: 1px; margin-top: 0.5pt; }
+  .facts { grid-template-columns: 1fr 1fr; gap: 6pt; }
+  .facts div { border: 1px solid #bbb; border-radius: 4pt; padding: 4pt 7pt; }
+  .facts dt { font-size: 6.5pt; margin-bottom: 1pt; }
+  .facts dd { font-size: 9pt; }
+  .print-only { display: block; margin: 8pt 0 0; font-size: 8pt; color: #444; }
+  a { color: #000; text-decoration: none; }
+}

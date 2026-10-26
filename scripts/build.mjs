@@ -17,9 +17,12 @@ import {
   esc, icon, headerHTML, footerHTML, projectCard, serviceRow, processCard, reasonCard,
   faqList, faqSchema, roleRow, postingHTML, jobPostingSchema,
 } from "../assets/js/markup.js";
+import { SITE_URL } from "../content/site.config.mjs";
+import { BUSINESS_TYPES } from "../content/ideas.mjs";
+import { renderIdeasIndex, renderIdeasPage, checkIdeasContent } from "./ideas-pages.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const SITE = "https://www.senxdev.com";
+const SITE = SITE_URL;
 const TODAY = new Date().toISOString().slice(0, 10);
 const OG_IMAGE = `${SITE}/favicon.jpg`;
 
@@ -398,6 +401,8 @@ async function buildSitemap() {
     ["/services", "0.9", "monthly"],
     ...SERVICE_PAGES.map((s) => [`/services/${s.slug}`, "0.9", "monthly"]),
     ["/work", "0.7", "monthly"],
+    ["/ideas", "0.8", "monthly"],
+    ...BUSINESS_TYPES.map((t) => [`/ideas/${t.slug}`, "0.7", "monthly"]),
     ["/careers", "0.6", "weekly"],
     ...JOBS.map((j) => [`/careers/${j.slug}`, "0.5", "weekly"]),
   ];
@@ -419,6 +424,10 @@ Contact: ${CONTACT.email} · ${CONTACT.phone} · WhatsApp ${CONTACT.whatsapp}
 
 ## Services
 ${SERVICE_PAGES.map((s) => `- [${s.name}](${SITE}/services/${s.slug}): ${s.description}`).join("\n")}
+
+## Automation ideas by business type
+- [All business types](${SITE}/ideas): Pick your business and see 3 practical automation ideas.
+${BUSINESS_TYPES.map((t) => `- [${t.name}](${SITE}/ideas/${t.slug}): ${t.ideas.map((x) => x.title).join("; ")}.`).join("\n")}
 
 ## Company
 - [Home](${SITE}/): Tell us what's slowing your business down and see what we'd build.
@@ -450,15 +459,22 @@ await buildCareers();
 await buildSimple("404.html", "");
 await write("services/index.html", servicesHub());
 for (const s of SERVICE_PAGES) await write(`services/${s.slug}/index.html`, servicePage(s));
+
+// Automation ideas pages (linked from the Instagram auto-DM). Stop if any copy breaks the content rules.
+const ideaProblems = checkIdeasContent();
+if (ideaProblems.length) throw new Error(`Fix content/ideas.mjs:\n  - ${ideaProblems.join("\n  - ")}`);
+await write("ideas/index.html", renderIdeasIndex());
+for (const t of BUSINESS_TYPES) await write(`ideas/${t.slug}/index.html`, renderIdeasPage(t));
 await buildSitemap();
 await buildLlms();
 await buildManifest();
 
 // Copy only what the public site needs into dist/ (no build scripts or source content).
-const PUBLIC = ["index.html", "404.html", "work.html", "assets", "careers", "services", "projects", "sitemap.xml", "robots.txt", "llms.txt", "site.webmanifest"];
+const PUBLIC = ["index.html", "404.html", "work.html", "assets", "careers", "services", "ideas", "projects", "sitemap.xml", "robots.txt", "llms.txt", "site.webmanifest"];
 await rm(join(ROOT, "dist"), { recursive: true, force: true });
 for (const p of PUBLIC) await cp(join(ROOT, p), join(ROOT, "dist", p), { recursive: true });
 // Social previews and structured data reference /favicon.jpg at the site root.
 await cp(join(ROOT, "assets/img/favicon.jpg"), join(ROOT, "dist/favicon.jpg"));
 console.log("  copied site to dist/");
+
 console.log("Done.");
