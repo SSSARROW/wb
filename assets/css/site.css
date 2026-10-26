@@ -470,6 +470,7 @@ dialog.focus[open] { animation: pop 0.5s var(--spring); }
 .success .tick { width: 64px; height: 64px; border-radius: 50%; background: var(--ok); color: var(--ink); display: grid; place-items: center; margin-bottom: 22px; animation: pop 0.6s var(--spring); }
 .success h3 { font-size: 40px; font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin: 0 0 10px; }
 .success p { color: var(--muted); margin: 0 0 24px; }
+.success-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 /* ---------- Footer ---------- */
 .site-footer { margin-top: clamp(80px, 11vw, 140px); border-top: 1px solid var(--line); padding: clamp(56px, 8vw, 96px) 0 28px; overflow: hidden; }

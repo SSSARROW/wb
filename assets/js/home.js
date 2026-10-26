@@ -516,6 +516,12 @@ form.addEventListener("submit", async (e) => {
     try { json = await res.json(); } catch { json = null; }
 
     if (json?.success) {
+      // Pre-fill the booking form with their details and brief (Cal.com puts notes in the booking email).
+      const book = new URL(CONTACT.booking);
+      book.searchParams.set("name", payload.name);
+      book.searchParams.set("email", payload.email);
+      book.searchParams.set("notes", `Came from: senxdev.com brief\nPhone: ${payload.phone}\n\n${payload.message}`.slice(0, 1500));
+      $("book-call").href = book.href;
       lastSent = fingerprint;
       form.reset();
       delete $("f-message").dataset.brief;

@@ -9,6 +9,8 @@ export const CONTACT = {
   whatsappGreeting: "https://wa.me/94763581264?text=Hello!%20I'm%20interested%20in%20your%20services.",
   linkedin: "https://linkedin.com/company/senxdev",
   instagram: "https://instagram.com/senxdev",
+  // 15-min call. Links add ?name=, ?email= and ?notes= so the booking form is pre-filled.
+  booking: "https://cal.com/senxdev/15min",
 };
 
 export const WEB3FORMS_KEY = "a142a491-ca1d-4210-8ba3-c84e30393f3a";
