@@ -175,7 +175,7 @@ export function tilt(root, selector) {
 
 /** Per-screen SEO tags, for pages whose content is decided at runtime. */
 export function setMeta({ title, description, path, robots = "index, follow" }) {
-  const url = `https://senxdev.com${path}`;
+  const url = `https://www.senxdev.com${path}`;
   document.title = title;
   const set = (attr, key, val) => {
     let el = document.head.querySelector(`meta[${attr}="${key}"]`);

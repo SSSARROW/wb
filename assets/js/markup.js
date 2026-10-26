@@ -199,12 +199,12 @@ export function jobPostingSchema(j) {
     description: j.fullDescription.replace(/\n/g, "<br>"),
     datePosted: j.posted,
     employmentType: EMPLOYMENT[j.type] || "OTHER",
-    hiringOrganization: { "@type": "Organization", name: "SenXDev", sameAs: "https://senxdev.com", logo: "https://senxdev.com/favicon.jpg" },
+    hiringOrganization: { "@type": "Organization", name: "SenXDev", sameAs: "https://www.senxdev.com", logo: "https://www.senxdev.com/favicon.jpg" },
     ...(j.location === "Remote"
       ? { jobLocationType: "TELECOMMUTE", applicantLocationRequirements: { "@type": "Country", name: "Anywhere" } }
       : { jobLocation: { "@type": "Place", address: j.location } }),
     directApply: true,
-    url: `https://senxdev.com/careers/${j.slug}`,
+    url: `https://www.senxdev.com/careers/${j.slug}`,
   };
 }
 

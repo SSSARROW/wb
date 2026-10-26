@@ -19,7 +19,7 @@ import {
 } from "../assets/js/markup.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const SITE = "https://senxdev.com";
+const SITE = "https://www.senxdev.com";
 const TODAY = new Date().toISOString().slice(0, 10);
 const OG_IMAGE = `${SITE}/favicon.jpg`;
 
