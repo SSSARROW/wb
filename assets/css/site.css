@@ -185,7 +185,7 @@ main, .site-footer { position: relative; z-index: 1; }
   .s3 .plan { grid-area: plan; }
   .s3 .step-cta { grid-area: cta; align-self: end; margin-top: 4px; }
 }
-@media (min-width: 1180px) {
+@media (min-width: 1000px) {
   .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .step.s3 { grid-column: auto; display: flex; }
   .s3 .bp-canvas { max-height: 270px; }
@@ -598,7 +598,7 @@ noscript .nojs a { font-weight: 700; }
   .contact-card { grid-template-columns: minmax(0, 1fr); }
   .field-row { grid-template-columns: minmax(0, 1fr); }
 }
-@media (min-width: 720px) and (max-width: 1179px) {
+@media (min-width: 720px) and (max-width: 999px) {
   .hero-head .lede { max-width: 46ch; }
 }
 
@@ -702,3 +702,109 @@ h1.kicker { margin: 0; }
 .hub-card h2 { margin: 0; font-size: clamp(26px, 2.4vw, 32px); font-weight: 900; letter-spacing: -0.035em; line-height: 1; }
 .hub-card p { margin: 0; color: var(--muted); }
 .hub-card .go { margin-top: auto; font-weight: 700; display: inline-flex; gap: 8px; align-items: center; color: var(--text); }
+
+/* =========================================================
+   INTRO: the real headline starts big and centred, then glides
+   into place as the title while everything else fades in.
+   html.intro-on is set before first paint (inline script in index.html)
+   ========================================================= */
+/* Big state: the headline centred on screen over a few lines. */
+.intro-on #hero-title {
+  position: fixed; left: 50%; top: 50%; z-index: 2; transform: translate(-50%, -54%);
+  width: min(92vw, 1180px); max-width: none; margin: 0; text-align: center; text-wrap: balance;
+  font-size: clamp(56px, 8.2vw, 136px); line-height: 0.95;
+}
+#hero-title .w { will-change: transform; }
+.intro-on .step, .intro-settling .step { opacity: 0; transform: translateY(90px) scale(0.96); transition-delay: 0s; }
+.intro-on .hero-meta, .intro-on .hero-h1, .intro-on .marquee, .intro-on main > section:not(.hero), .intro-on .wa,
+.intro-settling .hero-meta, .intro-settling .hero-h1, .intro-settling .marquee, .intro-settling main > section:not(.hero), .intro-settling .wa { opacity: 0; }
+.hero-meta, .hero-h1, .marquee, main > section { transition: opacity 0.7s var(--ease) 0.35s; }
+.intro-skip {
+  position: fixed; left: 0; right: 0; bottom: 28px; z-index: 3; text-align: center;
+  font-size: 13px; color: var(--dim); pointer-events: none;
+  animation: swap 0.6s var(--ease) 0.8s both; transition: opacity 0.3s;
+}
+.intro-skip.gone { opacity: 0; }
+
+/* =========================================================
+   Compact hero: everything fits on one screen from tablet up
+   ========================================================= */
+.more-probs {
+  display: none; border: 0; background: rgba(20, 20, 20, 0.12); color: var(--ink); cursor: pointer;
+  border-radius: 12px; padding: 10px 14px; font-size: 14px; font-weight: 700; text-align: left;
+  transition: background 0.25s;
+}
+.more-probs:hover { background: rgba(20, 20, 20, 0.2); }
+@media (min-width: 720px) {
+  .hero { padding-top: 4px; padding-bottom: 48px; }
+  .hero-head { padding: 4px 4px 18px; gap: 12px 40px; }
+  .hero-lead { gap: 10px; }
+  .hero-lead .display { font-size: clamp(34px, 3.9vw, 58px); max-width: 15ch; }
+  .hero-meta { gap: 12px; }
+  .hero-meta .lede { font-size: 16px; }
+  .step { padding: 22px; gap: 12px; }
+  .step h2 { font-size: clamp(24px, 2.1vw, 30px); }
+  .problems { gap: 6px; }
+  .prob { padding: 10px 14px; font-size: 15px; }
+  .problems:not(.expanded) .extra { display: none; }
+  .more-probs { display: block; }
+  .custom input { padding: 7px 0; font-size: 15px; }
+  .custom .pen { width: 34px; height: 34px; }
+  .sentence { font-size: clamp(18px, 1.55vw, 22px); line-height: 1.8; }
+  .hint { font-size: 13px; }
+  .compare { padding: 12px 14px; gap: 8px; }
+  .compare p { font-size: 14px; }
+  .s3 .bp-canvas { max-height: 210px; }
+  .modules { gap: 6px; }
+  .modules li { font-size: 15px; }
+  .step-cta .btn { min-height: 44px; padding: 0 18px; font-size: 15px; }
+}
+/* Short laptop screens: tighten further so the blocks still fit. */
+@media (min-width: 1000px) and (max-height: 860px) {
+  .hero-lead .display { font-size: clamp(32px, 3.2vw, 48px); }
+  .hero-head { padding-bottom: 14px; }
+  .step { padding: 18px 20px; gap: 10px; }
+  .step h2 { font-size: 24px; }
+  .prob { padding: 8px 12px; font-size: 14px; }
+  .sentence { font-size: 18px; line-height: 1.75; }
+  .hint { display: none; }
+  .s3 .bp-canvas { max-height: 165px; }
+  .plan-legend { display: none; }
+}
+@media (min-width: 720px) {
+  .hero-lead { flex: 1 1 560px; }
+  .hero-lead .display { max-width: none; text-wrap: balance; }
+  .hero-meta { flex: 0 1 340px; }
+}
+/* Very short screens (small laptops, landscape tablets): compact everything so the three steps still fit. */
+@media (min-width: 1000px) and (max-height: 720px) {
+  .hero-head { padding: 0 4px 10px; }
+  .hero-lead { gap: 6px; }
+  .hero-lead .display { font-size: clamp(30px, 2.8vw, 40px); }
+  .hero-meta .lede { display: none; }
+  .step { padding: 16px 18px; gap: 8px; border-radius: 22px; }
+  .step-top { font-size: 13px; }
+  .step-top .n b { width: 22px; height: 22px; font-size: 11px; }
+  .step h2 { font-size: 21px; }
+  .problems { gap: 5px; }
+  .prob { padding: 7px 12px; font-size: 13.5px; border-radius: 11px; }
+  .more-probs { padding: 7px 12px; font-size: 13px; }
+  .custom { padding: 3px 3px 3px 12px; }
+  .custom input { padding: 5px 0; font-size: 14px; }
+  .custom .pen { width: 30px; height: 30px; }
+  .sentence { font-size: 16.5px; line-height: 1.7; }
+  .compare { padding: 10px 12px; }
+  .compare div:first-child { display: none; }
+  .compare p { font-size: 13.5px; }
+  .s3 .bp-canvas { max-height: 125px; }
+  .modules { gap: 4px; }
+  .modules li { font-size: 13.5px; }
+  .modules li b { width: 22px; height: 22px; font-size: 11px; }
+  .plan { gap: 4px; }
+  .step-cta .btn { min-height: 38px; padding: 0 14px; font-size: 14px; }
+}
+/* Portrait tablets: shave the last few pixels. */
+@media (min-width: 720px) and (max-width: 999px) {
+  .s3 .bp-canvas { max-height: 230px; aspect-ratio: 16 / 10; }
+  .hero-head { padding-bottom: 14px; }
+}

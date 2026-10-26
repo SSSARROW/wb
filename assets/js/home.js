@@ -6,8 +6,10 @@ import { renderChrome, esc, icon, observeReveals, tilt, reduceMotion } from "./s
 import { drawBlueprint } from "./blueprint.js";
 import { projectCard, wireProjects } from "./work.js";
 import { serviceRow, processCard, reasonCard } from "./markup.js";
+import { runIntro } from "./intro.js";
 
 renderChrome("home");
+runIntro();
 const $ = (id) => document.getElementById(id);
 const SLOTS = ["who", "product", "goal", "when"];
 
@@ -70,11 +72,29 @@ function sentenceText() {
    ========================================================= */
 
 const problemsEl = $("problems");
+// From tablet up only the first few problems show, so all three steps fit on one screen.
+const VISIBLE_PROBLEMS = 4;
 problemsEl.innerHTML = PROBLEMS.map((p, i) => `
-  <li><button class="prob" type="button" data-i="${i}" aria-pressed="false">
+  <li${i >= VISIBLE_PROBLEMS ? ' class="extra"' : ""}><button class="prob" type="button" data-i="${i}" aria-pressed="false">
     <span>${esc(p.t)}</span><span class="mk" aria-hidden="true">→</span><span class="bar" aria-hidden="true"></span>
   </button></li>`).join("");
 $("custom-go").innerHTML = icon.pen(18);
+
+const moreBtn = document.createElement("button");
+moreBtn.type = "button";
+moreBtn.className = "more-probs";
+moreBtn.setAttribute("aria-expanded", "false");
+moreBtn.textContent = `More problems (${PROBLEMS.length - VISIBLE_PROBLEMS}) ▾`;
+problemsEl.after(moreBtn);
+moreBtn.addEventListener("click", () => {
+  const open = problemsEl.classList.toggle("expanded");
+  moreBtn.setAttribute("aria-expanded", String(open));
+  moreBtn.textContent = open ? "Fewer problems ▴" : `More problems (${PROBLEMS.length - VISIBLE_PROBLEMS}) ▾`;
+  if (open) problemsEl.querySelector(".extra .prob")?.focus();
+});
+// How many problems are on screen right now (autoplay only cycles through those).
+const shownProblems = () =>
+  problemsEl.classList.contains("expanded") || !matchMedia("(min-width: 720px)").matches ? PROBLEMS.length : VISIBLE_PROBLEMS;
 
 const chips = Object.fromEntries([...document.querySelectorAll(".chip")].map((c) => [c.dataset.slot, c]));
 
@@ -323,7 +343,11 @@ function markTiming() {
 function startAuto() {
   if (reduceMotion || userTookOver || auto) return;
   problemsEl.style.setProperty("--cycle", `${CYCLE}ms`);
-  auto = setInterval(() => { pickProblem((state.problem + 1) % PROBLEMS.length); markTiming(); }, CYCLE);
+  auto = setInterval(() => {
+    const next = typeof state.problem === "number" ? state.problem + 1 : 0;
+    pickProblem(next % shownProblems());
+    markTiming();
+  }, CYCLE);
   markTiming();
 }
 function pauseAuto() { clearInterval(auto); auto = null; markTiming(); }

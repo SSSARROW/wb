@@ -25,6 +25,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <script>
+    /* Play the headline intro before first paint on tablet/desktop, on every fresh visit or reload,
+       but not when coming back to Home from another page on the site. */
+    try {
+      var nav = (performance.getEntriesByType("navigation")[0] || {}).type;
+      var fromSite = document.referrer && new URL(document.referrer).origin === location.origin && nav !== "reload";
+      if (innerWidth >= 720 && !matchMedia("(prefers-reduced-motion: reduce)").matches &&
+          nav !== "back_forward" && !fromSite && !location.hash && !/[?&]product=/.test(location.search)) {
+        document.documentElement.classList.add("intro-on");
+      }
+    } catch (e) {}
+  </script>
   <!-- @schema -->
   <script type="application/ld+json">{"@context":"https://schema.org","@type":["Organization","ProfessionalService"],"@id":"https://www.senxdev.com/#organization","name":"SenXDev","url":"https://www.senxdev.com","logo":"https://www.senxdev.com/favicon.jpg","image":"https://www.senxdev.com/favicon.jpg","description":"SenXDev is a custom software development company building mobile apps, web apps, websites and AI solutions for startups and businesses worldwide, from its team in Sri Lanka.","email":"support@senxdev.com","telephone":"+94763581264","address":{"@type":"PostalAddress","addressCountry":"LK"},"areaServed":"Worldwide","sameAs":["https://linkedin.com/company/senxdev","https://instagram.com/senxdev"],"contactPoint":[{"@type":"ContactPoint","telephone":"+94763581264","email":"support@senxdev.com","contactType":"sales","availableLanguage":["English"]}],"knowsAbout":["Custom Software Development","Mobile App Development","Website Development","Web App Development","AI Development & Automation","UI/UX Design"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Software development services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Custom Software Development","url":"https://www.senxdev.com/services/custom-software-development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mobile App Development","url":"https://www.senxdev.com/services/mobile-app-development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Website Development","url":"https://www.senxdev.com/services/web-development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Web App Development","url":"https://www.senxdev.com/services/web-app-development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI Development & Automation","url":"https://www.senxdev.com/services/ai-development"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"UI/UX Design","url":"https://www.senxdev.com/services/ui-ux-design"}}]}}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.senxdev.com/#website","url":"https://www.senxdev.com","name":"SenXDev","publisher":{"@id":"https://www.senxdev.com/#organization"},"inLanguage":"en"}</script>
