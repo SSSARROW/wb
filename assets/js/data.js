@@ -3,8 +3,11 @@
 
 export const CONTACT = {
   email: "support@senxdev.com",
-  phone: "+94 76 358 1264",
-  phoneHref: "tel:+94763581264",
+  phones: [
+    { label: "+1 984 228 9909", href: "tel:+19842289909" },
+    { label: "+1 980 598 2737", href: "tel:+19805982737" },
+  ],
+  whatsappNumber: "+94 76 358 1264",
   whatsapp: "https://wa.me/94763581264",
   whatsappGreeting: "https://wa.me/94763581264?text=Hello!%20I'm%20interested%20in%20your%20services.",
   linkedin: "https://linkedin.com/company/senxdev",

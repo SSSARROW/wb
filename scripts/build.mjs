@@ -54,11 +54,11 @@ const organization = {
   image: OG_IMAGE,
   description: "SenXDev is a custom software development company building mobile apps, web apps, websites and AI solutions for startups and businesses worldwide, from its team in Sri Lanka.",
   email: CONTACT.email,
-  telephone: "+94763581264",
+  telephone: "+19842289909",
   address: { "@type": "PostalAddress", addressCountry: "LK" },
   areaServed: "Worldwide",
   sameAs: [CONTACT.linkedin, CONTACT.instagram],
-  contactPoint: [{ "@type": "ContactPoint", telephone: "+94763581264", email: CONTACT.email, contactType: "sales", availableLanguage: ["English"] }],
+  contactPoint: CONTACT.phones.map((p) => ({ "@type": "ContactPoint", telephone: p.href.replace("tel:", ""), email: CONTACT.email, contactType: "sales", availableLanguage: ["English"] })),
   knowsAbout: SERVICE_PAGES.map((s) => s.name),
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -322,8 +322,8 @@ async function buildHome() {
   h = fill(h, "faq", faqList(HOME_FAQS));
   h = fill(h, "contact", [
     ["Email", CONTACT.email, `mailto:${CONTACT.email}`, false],
-    ["Phone", CONTACT.phone, CONTACT.phoneHref, false],
-    ["WhatsApp", CONTACT.phone, CONTACT.whatsapp, true],
+    ...CONTACT.phones.map((p) => ["Phone", p.label, p.href, false]),
+    ["WhatsApp", CONTACT.whatsappNumber, CONTACT.whatsapp, true],
     ["LinkedIn", "linkedin.com/company/senxdev", CONTACT.linkedin, true],
     ["Instagram", "@senxdev", CONTACT.instagram, true],
   ].map(([k, v, href, ext]) => `
@@ -420,7 +420,7 @@ async function buildLlms() {
 
 > SenXDev is a custom software development company. We design and build mobile apps, web apps, websites and AI solutions for startups and businesses worldwide (USA, UK, Canada, Australia and more), from our team in Sri Lanka.
 
-Contact: ${CONTACT.email} · ${CONTACT.phone} · WhatsApp ${CONTACT.whatsapp}
+Contact: ${CONTACT.email} · ${CONTACT.phones.map((p) => p.label).join(" · ")} · WhatsApp ${CONTACT.whatsapp}
 
 ## Services
 ${SERVICE_PAGES.map((s) => `- [${s.name}](${SITE}/services/${s.slug}): ${s.description}`).join("\n")}

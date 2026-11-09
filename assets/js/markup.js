@@ -85,8 +85,8 @@ export function footerHTML(active) {
       </ul></div>
       <div><h2 class="foot-h">Contact</h2><ul>
         <li><a href="mailto:${CONTACT.email}">${CONTACT.email}</a></li>
-        <li><a href="${CONTACT.phoneHref}">${CONTACT.phone}</a></li>
-        <li><a href="${CONTACT.whatsapp}" target="_blank" rel="noopener">WhatsApp ↗</a></li>
+${CONTACT.phones.map((p) => `        <li><a href="${p.href}">${p.label}</a></li>
+`).join("")}        <li><a href="${CONTACT.whatsapp}" target="_blank" rel="noopener">WhatsApp ↗</a></li>
         <li><a href="${CONTACT.linkedin}" target="_blank" rel="noopener">LinkedIn ↗</a></li>
         <li><a href="${CONTACT.instagram}" target="_blank" rel="noopener">Instagram ↗</a></li>
       </ul></div>

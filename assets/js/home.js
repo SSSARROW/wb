@@ -417,8 +417,8 @@ fill("reasons", REASONS.map(reasonCard).join(""));
 
 fill("contact-list", [
   ["Email", CONTACT.email, `mailto:${CONTACT.email}`, false],
-  ["Phone", CONTACT.phone, CONTACT.phoneHref, false],
-  ["WhatsApp", CONTACT.phone, CONTACT.whatsapp, true],
+  ...CONTACT.phones.map((p) => ["Phone", p.label, p.href, false]),
+  ["WhatsApp", CONTACT.whatsappNumber, CONTACT.whatsapp, true],
   ["LinkedIn", "linkedin.com/company/senxdev", CONTACT.linkedin, true],
   ["Instagram", "@senxdev", CONTACT.instagram, true],
 ].map(([k, v, href, ext]) => `
