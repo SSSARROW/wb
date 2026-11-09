@@ -323,7 +323,7 @@ async function buildHome() {
   h = fill(h, "contact", [
     ["Email", CONTACT.email, `mailto:${CONTACT.email}`, false],
     ...CONTACT.phones.map((p) => ["Phone", p.label, p.href, false]),
-    ["WhatsApp", CONTACT.whatsappNumber, CONTACT.whatsapp, true],
+    ["WhatsApp", "Message now", CONTACT.whatsapp, true],
     ["LinkedIn", "linkedin.com/company/senxdev", CONTACT.linkedin, true],
     ["Instagram", "@senxdev", CONTACT.instagram, true],
   ].map(([k, v, href, ext]) => `
